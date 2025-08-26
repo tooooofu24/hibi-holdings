@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check": "eslint && prettier . -wc src"
+    "check": "tsc && eslint && prettier . -wc src"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.25.0",

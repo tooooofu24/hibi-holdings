@@ -1,20 +1,21 @@
 import {
   Box,
-  Container,
-  Heading,
-  Text,
   Button,
-  Stack,
-  HStack,
-  Flex,
-  Image,
   Card,
-  Input,
-  Textarea,
+  Container,
+  Flex,
   Grid,
+  Heading,
+  HStack,
+  Image,
+  Input,
   Link,
+  Stack,
+  Table,
+  Text,
+  Textarea,
 } from "@chakra-ui/react";
-import { LuSettings, LuMonitor, LuUsers } from "react-icons/lu";
+// Icons are imported but not used since we switched to images
 
 export default function Home() {
   return (
@@ -118,7 +119,7 @@ export default function Home() {
                   size={{ base: "4xl", md: "6xl", lg: "7xl" }}
                   fontWeight="900"
                   color="gray.900"
-                  lineHeight="0.9"
+                  lineHeight={{ base: "1.1", md: "1.0" }}
                   letterSpacing="tight"
                   mb={{ base: "4", md: "6" }}
                 >
@@ -133,12 +134,12 @@ export default function Home() {
                 <Text
                   fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
                   color="gray.600"
-                  lineHeight="1.6"
+                  lineHeight={{ base: "1.7", md: "1.6" }}
                   fontWeight="400"
                   maxW={{ md: "2xl" }}
                 >
-                  テクノロジーと戦略コンサルティングで、企業の成長と変革を支援します。
-                  持続可能な未来に向けて、革新的なソリューションを提供いたします。
+                  最新のテクノロジーと戦略的なコンサルティングで、
+                  お客様の事業成長をサポートします。
                 </Text>
               </Stack>
               <Stack
@@ -175,8 +176,8 @@ export default function Home() {
             </Stack>
             <Box order={{ base: "1", lg: "2" }} position="relative">
               <Image
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
-                alt="Modern office workspace"
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&auto=format"
+                alt="Digital transformation and technology innovation"
                 borderRadius={{ base: "2xl", md: "3xl" }}
                 shadow="2xl"
                 width="100%"
@@ -224,7 +225,7 @@ export default function Home() {
                 size={{ base: "3xl", md: "5xl", lg: "6xl" }}
                 fontWeight="900"
                 color="gray.900"
-                lineHeight="1.1"
+                lineHeight={{ base: "1.2", md: "1.1" }}
                 letterSpacing="tight"
               >
                 私たちのサービス
@@ -232,12 +233,11 @@ export default function Home() {
               <Text
                 fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
                 color="gray.600"
-                lineHeight="1.6"
+                lineHeight={{ base: "1.7", md: "1.6" }}
                 maxW="3xl"
                 mx="auto"
               >
-                戦略からテクノロジー、実行まで包括的なアプローチで、
-                お客様の成功を実現します。
+                企画から実装まで、ワンストップでお客様の課題を解決します。
               </Text>
             </Stack>
 
@@ -248,131 +248,128 @@ export default function Home() {
               mx="auto"
             >
               <Card.Root
-                p={{ base: "8", md: "10", lg: "12" }}
+                p="0"
                 shadow="lg"
                 bg="white"
                 border="2px"
                 borderColor="gray.100"
                 borderRadius="3xl"
+                overflow="hidden"
                 _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
                 transition="all 0.3s ease"
               >
-                <Stack gap={{ base: "6", md: "8" }} textAlign="center">
-                  <Box
-                    bg="gradient-to-br"
-                    gradientFrom="teal.400"
-                    gradientTo="teal.600"
-                    p={{ base: "5", md: "6" }}
-                    borderRadius="2xl"
-                    width="fit-content"
-                    mx="auto"
-                  >
-                    <LuSettings size={{ base: "32", md: "40" }} color="white" />
+                <Stack gap="0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=250&fit=crop&auto=format"
+                    alt="IT consulting and technology strategy"
+                    width="100%"
+                    height={{ base: "200px", md: "220px" }}
+                    objectFit="cover"
+                  />
+                  <Box p={{ base: "6", md: "8" }} textAlign="center">
+                    <Stack gap={{ base: "4", md: "6" }}>
+                      <Heading
+                        size={{ base: "xl", md: "2xl" }}
+                        color="gray.900"
+                        fontWeight="800"
+                        lineHeight={{ base: "1.3", md: "1.2" }}
+                      >
+                        ITコンサルティング
+                      </Heading>
+                      <Text
+                        color="gray.600"
+                        lineHeight={{ base: "1.7", md: "1.6" }}
+                        fontSize={{ base: "md", md: "lg" }}
+                      >
+                        システム導入から運用改善まで、
+                        御社のIT戦略をトータルでサポートします。
+                      </Text>
+                    </Stack>
                   </Box>
-                  <Stack gap={{ base: "4", md: "6" }}>
-                    <Heading
-                      size={{ base: "xl", md: "2xl" }}
-                      color="gray.900"
-                      fontWeight="800"
-                      lineHeight="1.2"
-                    >
-                      ITコンサルティング
-                    </Heading>
-                    <Text
-                      color="gray.600"
-                      lineHeight="1.6"
-                      fontSize={{ base: "md", md: "lg" }}
-                    >
-                      最新技術の導入から運用最適化まで、
-                      企業のIT戦略を包括的にサポートします。
-                    </Text>
-                  </Stack>
                 </Stack>
               </Card.Root>
 
               <Card.Root
-                p={{ base: "8", md: "10", lg: "12" }}
+                p="0"
                 shadow="lg"
                 bg="white"
                 border="2px"
                 borderColor="gray.100"
                 borderRadius="3xl"
+                overflow="hidden"
                 _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
                 transition="all 0.3s ease"
               >
-                <Stack gap={{ base: "6", md: "8" }} textAlign="center">
-                  <Box
-                    bg="gradient-to-br"
-                    gradientFrom="teal.400"
-                    gradientTo="teal.600"
-                    p={{ base: "5", md: "6" }}
-                    borderRadius="2xl"
-                    width="fit-content"
-                    mx="auto"
-                  >
-                    <LuMonitor size={{ base: "32", md: "40" }} color="white" />
+                <Stack gap="0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=250&fit=crop&auto=format"
+                    alt="Digital transformation and business innovation"
+                    width="100%"
+                    height={{ base: "200px", md: "220px" }}
+                    objectFit="cover"
+                  />
+                  <Box p={{ base: "6", md: "8" }} textAlign="center">
+                    <Stack gap={{ base: "4", md: "6" }}>
+                      <Heading
+                        size={{ base: "xl", md: "2xl" }}
+                        color="gray.900"
+                        fontWeight="800"
+                        lineHeight={{ base: "1.3", md: "1.2" }}
+                      >
+                        DX推進支援
+                      </Heading>
+                      <Text
+                        color="gray.600"
+                        lineHeight={{ base: "1.7", md: "1.6" }}
+                        fontSize={{ base: "md", md: "lg" }}
+                      >
+                        デジタル化の企画から実行まで、
+                        事業競争力の向上をお手伝いします。
+                      </Text>
+                    </Stack>
                   </Box>
-                  <Stack gap={{ base: "4", md: "6" }}>
-                    <Heading
-                      size={{ base: "xl", md: "2xl" }}
-                      color="gray.900"
-                      fontWeight="800"
-                      lineHeight="1.2"
-                    >
-                      DX推進支援
-                    </Heading>
-                    <Text
-                      color="gray.600"
-                      lineHeight="1.6"
-                      fontSize={{ base: "md", md: "lg" }}
-                    >
-                      デジタル変革の計画から実行まで、
-                      企業の競争力向上をトータルサポートします。
-                    </Text>
-                  </Stack>
                 </Stack>
               </Card.Root>
 
               <Card.Root
-                p={{ base: "8", md: "10", lg: "12" }}
+                p="0"
                 shadow="lg"
                 bg="white"
                 border="2px"
                 borderColor="gray.100"
                 borderRadius="3xl"
+                overflow="hidden"
                 _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
                 transition="all 0.3s ease"
               >
-                <Stack gap={{ base: "6", md: "8" }} textAlign="center">
-                  <Box
-                    bg="gradient-to-br"
-                    gradientFrom="teal.400"
-                    gradientTo="teal.600"
-                    p={{ base: "5", md: "6" }}
-                    borderRadius="2xl"
-                    width="fit-content"
-                    mx="auto"
-                  >
-                    <LuUsers size={{ base: "32", md: "40" }} color="white" />
+                <Stack gap="0">
+                  <Image
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=250&fit=crop&auto=format"
+                    alt="Professional team collaboration and talent solutions"
+                    width="100%"
+                    height={{ base: "200px", md: "220px" }}
+                    objectFit="cover"
+                  />
+                  <Box p={{ base: "6", md: "8" }} textAlign="center">
+                    <Stack gap={{ base: "4", md: "6" }}>
+                      <Heading
+                        size={{ base: "xl", md: "2xl" }}
+                        color="gray.900"
+                        fontWeight="800"
+                        lineHeight={{ base: "1.3", md: "1.2" }}
+                      >
+                        人材ソリューション
+                      </Heading>
+                      <Text
+                        color="gray.600"
+                        lineHeight={{ base: "1.7", md: "1.6" }}
+                        fontSize={{ base: "md", md: "lg" }}
+                      >
+                        豊富な経験を持つエキスパートが、
+                        御社のプロジェクトを成功へと導きます。
+                      </Text>
+                    </Stack>
                   </Box>
-                  <Stack gap={{ base: "4", md: "6" }}>
-                    <Heading
-                      size={{ base: "xl", md: "2xl" }}
-                      color="gray.900"
-                      fontWeight="800"
-                      lineHeight="1.2"
-                    >
-                      人材ソリューション
-                    </Heading>
-                    <Text
-                      color="gray.600"
-                      lineHeight="1.6"
-                      fontSize={{ base: "md", md: "lg" }}
-                    >
-                      高度なスキルを持つ専門人材により、
-                      プロジェクトの成功を加速させます。
-                    </Text>
-                  </Stack>
                 </Stack>
               </Card.Root>
             </Grid>
@@ -406,7 +403,7 @@ export default function Home() {
                 size={{ base: "3xl", md: "5xl", lg: "6xl" }}
                 fontWeight="900"
                 color="gray.900"
-                lineHeight="1.1"
+                lineHeight={{ base: "1.2", md: "1.1" }}
                 letterSpacing="tight"
               >
                 Hibi Holdingsについて
@@ -414,24 +411,24 @@ export default function Home() {
               <Text
                 fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
                 color="gray.600"
-                lineHeight="1.6"
+                lineHeight={{ base: "1.7", md: "1.6" }}
                 maxW="3xl"
                 mx="auto"
               >
-                私たちは、戦略家、デザイナー、エンジニアからなるチームで、
-                複雑なビジネス課題の解決に情熱を注いでいます。
+                私たちは戦略からテクノロジーまで幅広い専門性を持つチームです。
+                お客様と共に、困難な課題にも果敢に取り組みます。
               </Text>
             </Stack>
 
             <Grid
-              templateColumns={{ base: "1fr", lg: "1.2fr 0.8fr" }}
-              gap={{ base: "12", md: "14", lg: "16", xl: "18" }}
-              alignItems="center"
+              templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
+              gap={{ base: "12", md: "16", lg: "20" }}
+              alignItems="stretch"
               maxW="6xl"
               mx="auto"
             >
-              <Box>
-                <Stack gap={{ base: "8", md: "10", lg: "12" }}>
+              <Flex direction="column">
+                <Stack gap={{ base: "8", md: "10", lg: "12" }} flex="1">
                   <Box
                     bg="white"
                     p={{ base: "6", md: "8", lg: "10" }}
@@ -439,24 +436,25 @@ export default function Home() {
                     shadow="lg"
                     border="2px"
                     borderColor="gray.100"
+                    flex="1"
                   >
                     <Heading
                       size={{ base: "xl", md: "2xl", lg: "3xl" }}
                       color="gray.900"
                       fontWeight="800"
                       mb={{ base: "4", md: "6" }}
-                      lineHeight="1.2"
+                      lineHeight={{ base: "1.3", md: "1.2" }}
                     >
                       私たちのアプローチ
                     </Heading>
                     <Text
                       color="gray.600"
-                      lineHeight="1.6"
+                      lineHeight={{ base: "1.7", md: "1.6" }}
                       fontSize={{ base: "md", md: "lg", lg: "xl" }}
                     >
-                      単なる供給業者ではなく、真のパートナーシップを重視します。
-                      お客様固有の課題を深く理解し、
-                      持続的なインパクトをもたらすソリューションを開発します。
+                      お客様との信頼関係を何より大切にしています。
+                      御社固有の課題をしっかりとヒアリングし、
+                      長期的な視点で最適なソリューションをご提案します。
                     </Text>
                   </Box>
                   <Box
@@ -466,35 +464,36 @@ export default function Home() {
                     shadow="lg"
                     border="2px"
                     borderColor="gray.100"
+                    flex="1"
                   >
                     <Heading
                       size={{ base: "xl", md: "2xl", lg: "3xl" }}
                       color="gray.900"
                       fontWeight="800"
                       mb={{ base: "4", md: "6" }}
-                      lineHeight="1.2"
+                      lineHeight={{ base: "1.3", md: "1.2" }}
                     >
                       私たちの強み
                     </Heading>
                     <Text
                       color="gray.600"
-                      lineHeight="1.6"
+                      lineHeight={{ base: "1.7", md: "1.6" }}
                       fontSize={{ base: "md", md: "lg", lg: "xl" }}
                     >
-                      10年以上のテクノロジーとビジネス変革の経験を活かし、
-                      業界を問わず企業の運営改善と
-                      持続的な成長を支援してきました。
+                      創業以来10年にわたり、様々な業界のお客様と
+                      お取引いただいております。これまでの豊富な実績と
+                      ノウハウで、御社の成長をお手伝いします。
                     </Text>
                   </Box>
                 </Stack>
-              </Box>
-              <Box position="relative">
+              </Flex>
+              <Box position="relative" flex="1">
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                   alt="Hibi Holdings team"
                   borderRadius={{ base: "2xl", md: "3xl" }}
                   width="100%"
-                  height={{ base: "300px", md: "400px", lg: "550px" }}
+                  height="100%"
                   objectFit="cover"
                   shadow="2xl"
                 />
@@ -511,28 +510,28 @@ export default function Home() {
               </Box>
             </Grid>
 
-            <Box
-              bg="white"
-              borderRadius="3xl"
-              p={{ base: "8", md: "12", lg: "16" }}
-              shadow="xl"
-              border="2px"
-              borderColor="gray.100"
-              maxW="6xl"
-              mx="auto"
-              w="full"
-            >
+            <Stack gap={{ base: "12", md: "16", lg: "20" }}>
               <Grid
                 templateColumns={{ base: "1fr", sm: "repeat(3, 1fr)" }}
                 gap={{ base: "8", md: "12" }}
+                maxW="6xl"
+                mx="auto"
               >
-                <Box textAlign="center">
+                <Card.Root
+                  bg="white"
+                  borderRadius="3xl"
+                  p={{ base: "8", md: "10", lg: "12" }}
+                  shadow="xl"
+                  border="2px"
+                  borderColor="gray.100"
+                  textAlign="center"
+                >
                   <Heading
                     size={{ base: "4xl", md: "5xl", lg: "6xl" }}
                     color="teal.600"
                     fontWeight="900"
                     mb={{ base: "3", md: "4" }}
-                    lineHeight="1"
+                    lineHeight="1.1"
                   >
                     150+
                   </Heading>
@@ -544,14 +543,23 @@ export default function Home() {
                   >
                     プロジェクト実績
                   </Text>
-                </Box>
-                <Box textAlign="center">
+                </Card.Root>
+
+                <Card.Root
+                  bg="white"
+                  borderRadius="3xl"
+                  p={{ base: "8", md: "10", lg: "12" }}
+                  shadow="xl"
+                  border="2px"
+                  borderColor="gray.100"
+                  textAlign="center"
+                >
                   <Heading
                     size={{ base: "4xl", md: "5xl", lg: "6xl" }}
                     color="teal.600"
                     fontWeight="900"
                     mb={{ base: "3", md: "4" }}
-                    lineHeight="1"
+                    lineHeight="1.1"
                   >
                     10年
                   </Heading>
@@ -563,14 +571,23 @@ export default function Home() {
                   >
                     業界経験
                   </Text>
-                </Box>
-                <Box textAlign="center">
+                </Card.Root>
+
+                <Card.Root
+                  bg="white"
+                  borderRadius="3xl"
+                  p={{ base: "8", md: "10", lg: "12" }}
+                  shadow="xl"
+                  border="2px"
+                  borderColor="gray.100"
+                  textAlign="center"
+                >
                   <Heading
                     size={{ base: "4xl", md: "5xl", lg: "6xl" }}
                     color="teal.600"
                     fontWeight="900"
                     mb={{ base: "3", md: "4" }}
-                    lineHeight="1"
+                    lineHeight="1.1"
                   >
                     98%
                   </Heading>
@@ -582,112 +599,248 @@ export default function Home() {
                   >
                     顧客満足度
                   </Text>
+                </Card.Root>
+              </Grid>
+
+              <Grid
+                templateColumns={{ base: "1fr", lg: "0.4fr 0.6fr" }}
+                gap={{ base: "12", md: "16", lg: "20" }}
+                alignItems="center"
+              >
+                <Box position="relative" flex="1">
+                  <Image
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=600&fit=crop&auto=format"
+                    alt="Modern office space"
+                    borderRadius={{ base: "2xl", md: "3xl" }}
+                    width="100%"
+                    height={{ base: "300px", md: "400px", lg: "500px" }}
+                    objectFit="cover"
+                    shadow="2xl"
+                  />
+                  <Box
+                    position="absolute"
+                    bottom="-6"
+                    right="-6"
+                    w="16"
+                    h="16"
+                    bg="teal.500"
+                    borderRadius="full"
+                    display={{ base: "none", lg: "block" }}
+                  />
+                </Box>
+
+                <Box
+                  flex="2"
+                  bg="white"
+                  borderRadius="3xl"
+                  p={{ base: "8", md: "12", lg: "16" }}
+                  shadow="xl"
+                  border="2px"
+                  borderColor="gray.100"
+                  w="full"
+                >
+                  <Heading
+                    size={{ base: "lg", md: "xl", lg: "2xl" }}
+                    color="gray.900"
+                    fontWeight="800"
+                    mb={{ base: "6", md: "8" }}
+                    lineHeight={{ base: "1.3", md: "1.2" }}
+                  >
+                    会社基本情報
+                  </Heading>
+                  <Table.Root size={{ base: "sm", md: "md" }}>
+                    <Table.Body>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          会社名
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          株式会社Hibi Holdings
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          設立
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          2014年4月
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          資本金
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          1,000万円
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          代表者
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          代表取締役 田中 太郎
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          所在地
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          〒150-0001
+                          <br />
+                          東京都渋谷区神宮前1-1-1
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          従業員数
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          45名
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row>
+                        <Table.Cell
+                          fontWeight="700"
+                          color="gray.700"
+                          bg="gray.50"
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          borderRadius="lg"
+                        >
+                          事業内容
+                        </Table.Cell>
+                        <Table.Cell
+                          p={{ base: "3", md: "4" }}
+                          fontSize={{ base: "sm", md: "md" }}
+                          color="gray.800"
+                        >
+                          ITコンサルティング
+                          <br />
+                          DX推進支援
+                          <br />
+                          人材ソリューション
+                        </Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table.Root>
                 </Box>
               </Grid>
-            </Box>
+            </Stack>
           </Stack>
         </Container>
       </Box>
 
       {/* Contact Section */}
-      <Box py={{ base: "20", md: "28", lg: "36" }} bg="white" id="contact">
+      <Box py={{ base: "20", md: "28", lg: "36" }} bg="gray.50" id="contact">
         <Container
           maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
           px={{ base: "6", md: "10", lg: "12", xl: "16" }}
         >
-          <Grid
-            templateColumns={{ base: "1fr", lg: "1.2fr 0.8fr" }}
-            gap={{ base: "12", md: "14", lg: "16", xl: "18" }}
-            alignItems="start"
-            maxW="6xl"
+          <Stack
+            gap={{ base: "16", md: "20", lg: "24" }}
+            maxW="5xl"
             mx="auto"
+            textAlign="center"
           >
-            <Stack gap={{ base: "8", md: "10" }}>
-              <Stack gap={{ base: "6", md: "8" }}>
-                <Text
-                  color="teal.600"
-                  fontWeight="600"
-                  textTransform="uppercase"
-                  letterSpacing="widest"
-                  fontSize={{ base: "sm", md: "md" }}
-                >
-                  お問い合わせ
-                </Text>
-                <Heading
-                  size={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                  fontWeight="900"
-                  color="gray.900"
-                  lineHeight="1.1"
-                  letterSpacing="tight"
-                >
-                  一緒に未来を
-                  <br />
-                  創りませんか
-                </Heading>
-                <Text
-                  fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
-                  color="gray.600"
-                  lineHeight="1.6"
-                  maxW="2xl"
-                >
-                  ビジネスを次のレベルに引き上げる準備はできていますか？
-                  あなたのプロジェクトについてお聞かせください。
-                </Text>
-              </Stack>
-              <Grid
-                templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
-                gap={{ base: "6", md: "8" }}
+            <Stack gap={{ base: "6", md: "8" }}>
+              <Text
+                color="teal.600"
+                fontWeight="600"
+                textTransform="uppercase"
+                letterSpacing="widest"
+                fontSize={{ base: "sm", md: "md" }}
               >
-                <Box
-                  bg="gray.50"
-                  p={{ base: "6", md: "8" }}
-                  borderRadius="2xl"
-                  border="2px"
-                  borderColor="gray.100"
-                >
-                  <Text
-                    fontWeight="700"
-                    color="gray.900"
-                    mb={{ base: "3", md: "4" }}
-                    fontSize={{ base: "md", md: "lg" }}
-                  >
-                    直接メールでご連絡
-                  </Text>
-                  <Link
-                    href="mailto:contact@hibi-holdings.com"
-                    color="teal.600"
-                    fontSize={{ base: "md", md: "lg" }}
-                    fontWeight="600"
-                    wordBreak="break-all"
-                    _hover={{ color: "teal.700" }}
-                  >
-                    contact@hibi-holdings.com
-                  </Link>
-                </Box>
-                <Box
-                  bg="gray.50"
-                  p={{ base: "6", md: "8" }}
-                  borderRadius="2xl"
-                  border="2px"
-                  borderColor="gray.100"
-                >
-                  <Text
-                    fontWeight="700"
-                    color="gray.900"
-                    mb={{ base: "3", md: "4" }}
-                    fontSize={{ base: "md", md: "lg" }}
-                  >
-                    お電話でのお問い合わせ
-                  </Text>
-                  <Text
-                    color="gray.700"
-                    fontSize={{ base: "md", md: "lg" }}
-                    fontWeight="600"
-                  >
-                    03-1234-5678
-                  </Text>
-                </Box>
-              </Grid>
+                お問い合わせ
+              </Text>
+              <Heading
+                size={{ base: "3xl", md: "5xl", lg: "6xl" }}
+                fontWeight="900"
+                color="gray.900"
+                lineHeight={{ base: "1.2", md: "1.1" }}
+                letterSpacing="tight"
+              >
+                一緒に未来を
+                <Box as="br" display={{ base: "block", lg: "none" }} />
+                創りませんか
+              </Heading>
+              <Text
+                fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
+                color="gray.600"
+                lineHeight={{ base: "1.7", md: "1.6" }}
+                maxW="3xl"
+                mx="auto"
+              >
+                御社の事業をさらに発展させませんか？
+                どのようなお悩みでも、まずはお気軽にご相談ください。
+              </Text>
             </Stack>
 
             <Card.Root
@@ -697,20 +850,65 @@ export default function Home() {
               borderColor="gray.200"
               borderRadius="3xl"
               bg="white"
+              maxW="3xl"
+              mx="auto"
+              w="full"
             >
-              <Stack gap={{ base: "6", md: "8" }}>
-                <Heading
-                  size={{ base: "lg", md: "xl", lg: "2xl" }}
-                  color="gray.900"
-                  fontWeight="800"
-                  lineHeight="1.2"
-                >
-                  お気軽にお問い合わせください
-                </Heading>
-                <Grid
-                  templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
-                  gap={{ base: "4", md: "6" }}
-                >
+                <Stack gap={{ base: "6", md: "8" }}>
+                  <Heading
+                    size={{ base: "lg", md: "xl", lg: "2xl" }}
+                    color="gray.900"
+                    fontWeight="800"
+                    lineHeight={{ base: "1.3", md: "1.2" }}
+                    textAlign="left"
+                  >
+                    お気軽にお問い合わせください
+                  </Heading>
+                  <Grid
+                    templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
+                    gap={{ base: "4", md: "6" }}
+                  >
+                    <Box>
+                      <Text
+                        fontWeight="600"
+                        mb="3"
+                        color="gray.700"
+                        fontSize={{ base: "md", md: "lg" }}
+                      >
+                        お名前 *
+                      </Text>
+                      <Input
+                        placeholder="山田太郎"
+                        size={{ base: "md", md: "lg" }}
+                        borderRadius="xl"
+                        border="2px"
+                        borderColor="gray.200"
+                        _focus={{ borderColor: "teal.500", shadow: "md" }}
+                        h={{ lg: "12" }}
+                      />
+                    </Box>
+
+                    <Box>
+                      <Text
+                        fontWeight="600"
+                        mb="3"
+                        color="gray.700"
+                        fontSize={{ base: "md", md: "lg" }}
+                      >
+                        メールアドレス *
+                      </Text>
+                      <Input
+                        placeholder="yamada@example.com"
+                        size={{ base: "md", md: "lg" }}
+                        borderRadius="xl"
+                        border="2px"
+                        borderColor="gray.200"
+                        _focus={{ borderColor: "teal.500", shadow: "md" }}
+                        h={{ lg: "12" }}
+                      />
+                    </Box>
+                  </Grid>
+
                   <Box>
                     <Text
                       fontWeight="600"
@@ -718,15 +916,16 @@ export default function Home() {
                       color="gray.700"
                       fontSize={{ base: "md", md: "lg" }}
                     >
-                      お名前
+                      会社名
                     </Text>
                     <Input
-                      placeholder="山田太郎"
+                      placeholder="株式会社○○"
                       size={{ base: "md", md: "lg" }}
                       borderRadius="xl"
                       border="2px"
                       borderColor="gray.200"
                       _focus={{ borderColor: "teal.500", shadow: "md" }}
+                      h={{ lg: "12" }}
                     />
                   </Box>
 
@@ -737,10 +936,11 @@ export default function Home() {
                       color="gray.700"
                       fontSize={{ base: "md", md: "lg" }}
                     >
-                      メールアドレス
+                      お問い合わせ内容 *
                     </Text>
-                    <Input
-                      placeholder="yamada@example.com"
+                    <Textarea
+                      placeholder="プロジェクトの詳細やご質問をお聞かせください..."
+                      minH={{ base: "120px", md: "140px", lg: "160px" }}
                       size={{ base: "md", md: "lg" }}
                       borderRadius="xl"
                       border="2px"
@@ -748,64 +948,24 @@ export default function Home() {
                       _focus={{ borderColor: "teal.500", shadow: "md" }}
                     />
                   </Box>
-                </Grid>
 
-                <Box>
-                  <Text
-                    fontWeight="600"
-                    mb="3"
-                    color="gray.700"
+                  <Button
+                    colorPalette="teal"
+                    size={{ base: "lg", md: "xl" }}
+                    fontWeight="700"
+                    w="full"
+                    py={{ base: "3", md: "4" }}
                     fontSize={{ base: "md", md: "lg" }}
-                  >
-                    会社名
-                  </Text>
-                  <Input
-                    placeholder="株式会社○○"
-                    size={{ base: "md", md: "lg" }}
                     borderRadius="xl"
-                    border="2px"
-                    borderColor="gray.200"
-                    _focus={{ borderColor: "teal.500", shadow: "md" }}
-                  />
-                </Box>
-
-                <Box>
-                  <Text
-                    fontWeight="600"
-                    mb="3"
-                    color="gray.700"
-                    fontSize={{ base: "md", md: "lg" }}
+                    shadow="md"
+                    _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
+                    transition="all 0.3s ease"
                   >
-                    お問い合わせ内容
-                  </Text>
-                  <Textarea
-                    placeholder="プロジェクトの詳細やご質問をお聞かせください..."
-                    minH={{ base: "120px", md: "140px" }}
-                    size={{ base: "md", md: "lg" }}
-                    borderRadius="xl"
-                    border="2px"
-                    borderColor="gray.200"
-                    _focus={{ borderColor: "teal.500", shadow: "md" }}
-                  />
-                </Box>
-
-                <Button
-                  colorPalette="teal"
-                  size={{ base: "lg", md: "xl" }}
-                  fontWeight="700"
-                  w="full"
-                  py={{ base: "3", md: "4" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  borderRadius="xl"
-                  shadow="md"
-                  _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
-                  transition="all 0.3s ease"
-                >
-                  送信する
-                </Button>
-              </Stack>
-            </Card.Root>
-          </Grid>
+                    送信する
+                  </Button>
+                </Stack>
+              </Card.Root>
+          </Stack>
         </Container>
       </Box>
 
@@ -832,11 +992,11 @@ export default function Home() {
               </Heading>
               <Text
                 color="gray.300"
-                lineHeight="1.6"
+                lineHeight={{ base: "1.7", md: "1.6" }}
                 fontSize={{ base: "md", md: "lg" }}
                 maxW="sm"
               >
-                テクノロジーと戦略で、 企業の未来を創造します。
+                最新技術と戦略で、 お客様の未来を共に創ります。
               </Text>
             </Stack>
 
