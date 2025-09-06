@@ -1,5 +1,11 @@
 import { Provider } from "@/components/chakra-ui/provider";
 import type { Metadata } from "next";
+import { Noto_Sans_JP } from "next/font/google";
+
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Hibi Holdings - デジタルソリューションで未来を創る",
@@ -10,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props;
   return (
-    <html lang="ja" suppressHydrationWarning>
+    <html lang="ja" suppressHydrationWarning className={notoSansJP.variable}>
       <head>
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
@@ -18,12 +24,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body
-        style={{
-          fontFamily:
-            "'M PLUS 1p', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-        }}
-      >
+      <body>
         <Provider defaultTheme="light">{children}</Provider>
       </body>
     </html>
