@@ -7,73 +7,104 @@ import {
   Grid,
   Heading,
   HStack,
-  Image,
-  Input,
   Link,
-  Stack,
-  Table,
   Text,
-  Textarea,
+  VStack,
 } from "@chakra-ui/react";
-// Icons are imported but not used since we switched to images
+import { Montserrat } from "next/font/google";
+import Image from "next/image";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
 
 export default function Home() {
   return (
     <Box>
-      {/* Navigation */}
-      <Box bg="white" shadow="sm" position="sticky" top="0" zIndex="sticky">
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
-          <Flex
-            h={{ base: "16", md: "20" }}
-            align="center"
-            justify="space-between"
-          >
+      {/* Navigation - Cleaner, inspired by condense.jp */}
+      <Box
+        bg="white"
+        position="sticky"
+        top="0"
+        zIndex="sticky"
+        borderBottom="1px solid"
+        borderColor="gray.100"
+        role="navigation"
+        aria-label="メインナビゲーション"
+      >
+        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
+          <Flex h="20" align="center" justify="space-between">
             <Box
-              fontWeight="900"
-              fontSize={{ base: "xl", md: "2xl" }}
+              fontWeight="800"
+              fontSize="2xl"
               color="gray.900"
               letterSpacing="tight"
+              role="banner"
+              className={montserrat.className}
             >
               Hibi Holdings
             </Box>
             <HStack
-              gap={{ base: "6", md: "8" }}
+              gap="10"
               align="center"
-              display={{ base: "none", md: "flex" }}
+              display={{ base: "none", lg: "flex" }}
             >
               <Link
                 href="#services"
-                fontWeight="medium"
-                fontSize="lg"
-                _hover={{ color: "teal.600" }}
+                fontSize="sm"
+                fontWeight="500"
+                color="gray.600"
+                _hover={{ color: "gray.900" }}
+                transition="color 0.2s"
+                aria-label="事業内容セクションへ移動"
               >
                 事業内容
               </Link>
               <Link
                 href="#about"
-                fontWeight="medium"
-                fontSize="lg"
-                _hover={{ color: "teal.600" }}
+                fontSize="sm"
+                fontWeight="500"
+                color="gray.600"
+                _hover={{ color: "gray.900" }}
+                transition="color 0.2s"
+                aria-label="会社情報セクションへ移動"
               >
                 会社情報
               </Link>
               <Link
                 href="#contact"
-                fontWeight="medium"
-                fontSize="lg"
-                _hover={{ color: "teal.600" }}
+                fontSize="sm"
+                fontWeight="500"
+                color="gray.600"
+                _hover={{ color: "gray.900" }}
+                transition="color 0.2s"
+                aria-label="お問い合わせセクションへ移動"
               >
                 お問い合わせ
               </Link>
-              <Button colorPalette="teal" size="md" px="8">
+              <Button
+                size="sm"
+                colorPalette="gray"
+                variant="solid"
+                px="6"
+                py="2"
+                borderRadius="full"
+                fontSize="sm"
+                fontWeight="500"
+                aria-label="資料請求フォームを開く"
+              >
                 資料請求
               </Button>
             </HStack>
-            <Box display={{ base: "block", md: "none" }}>
-              <Button variant="ghost" size="md">
+            <Box display={{ base: "block", lg: "none" }}>
+              <Button
+                variant="ghost"
+                size="sm"
+                aria-label="メニューを開く"
+                aria-expanded="false"
+              >
                 ≡
               </Button>
             </Box>
@@ -81,1040 +112,520 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Hero Section */}
-      <Box
-        minH={{ base: "80vh", md: "90vh" }}
-        position="relative"
-        display="flex"
-        alignItems="center"
-        bg="gray.50"
-        py={{ base: "16", md: "24", lg: "32" }}
-      >
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
+      {/* Hero Section - Bold, minimal like condense.jp */}
+      <Box py={{ base: "20", md: "32", lg: "40" }} bg="white">
+        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
           <Grid
-            templateColumns={{ base: "1fr", lg: "1.3fr 0.7fr" }}
-            gap={{ base: "12", lg: "16", xl: "20" }}
+            templateColumns={{ base: "1fr", lg: "1.2fr 0.8fr" }}
+            gap={{ base: "16", lg: "20" }}
             alignItems="center"
           >
-            <Stack
-              gap={{ base: "8", md: "10", lg: "12" }}
-              order={{ base: "2", lg: "1" }}
-              maxW={{ lg: "none" }}
-            >
-              <Stack gap={{ base: "6", md: "8" }}>
+            <VStack gap={{ base: "12", md: "16" }} align="start">
+              <VStack gap="8" align="start">
                 <Text
-                  fontSize={{ base: "sm", md: "md" }}
+                  fontSize="sm"
                   fontWeight="600"
-                  color="teal.600"
+                  color="gray.500"
                   textTransform="uppercase"
-                  letterSpacing="widest"
-                  mb="2"
+                  letterSpacing="wider"
+                  role="doc-subtitle"
                 >
                   Hibi Holdings
                 </Text>
-                <Heading
-                  size={{ base: "4xl", md: "6xl", lg: "7xl" }}
-                  fontWeight="900"
-                  color="gray.900"
-                  lineHeight={{ base: "1.1", md: "1.0" }}
-                  letterSpacing="tight"
-                  mb={{ base: "4", md: "6" }}
-                >
-                  未来を創る
-                  <br />
-                  <Box as="span" color="teal.600">
+                <VStack gap="4" align="start">
+                  <Heading
+                    as="h1"
+                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
+                    fontWeight="800"
+                    color="gray.900"
+                    lineHeight="0.9"
+                    letterSpacing="tight"
+                  >
+                    未来を創る
+                  </Heading>
+                  <Heading
+                    as="span"
+                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
+                    fontWeight="800"
+                    color="gray.400"
+                    lineHeight="0.9"
+                    letterSpacing="tight"
+                  >
                     デジタル
-                  </Box>
-                  <br />
-                  ソリューション
-                </Heading>
+                  </Heading>
+                  <Heading
+                    as="span"
+                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
+                    fontWeight="800"
+                    color="gray.900"
+                    lineHeight="0.9"
+                    letterSpacing="tight"
+                  >
+                    ソリューション
+                  </Heading>
+                </VStack>
                 <Text
-                  fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
+                  fontSize={{ base: "lg", md: "xl" }}
                   color="gray.600"
-                  lineHeight={{ base: "1.7", md: "1.6" }}
+                  lineHeight="1.8"
                   fontWeight="400"
-                  maxW={{ md: "2xl" }}
+                  maxW="2xl"
+                  role="doc-subtitle"
                 >
-                  最新のテクノロジーと戦略的なコンサルティングで、
-                  お客様の事業成長をサポートします。
+                  テクノロジーと経営実装をつなぎ、事業の&ldquo;次の一手&rdquo;を最短で形にします。
                 </Text>
-              </Stack>
-              <Stack
-                direction={{ base: "column", sm: "row" }}
-                gap={{ base: "4", md: "6" }}
-                w={{ base: "full", sm: "auto" }}
-              >
+              </VStack>
+              <HStack gap="4">
                 <Button
-                  size={{ base: "lg", md: "xl" }}
-                  colorPalette="teal"
-                  px={{ base: "8", md: "12" }}
-                  py={{ base: "3", md: "4" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="600"
-                  w={{ base: "full", sm: "auto" }}
-                  borderRadius="xl"
+                  size="lg"
+                  colorPalette="gray"
+                  variant="solid"
+                  px="8"
+                  py="6"
+                  fontSize="md"
+                  fontWeight="500"
+                  borderRadius="full"
+                  aria-label="サービス詳細を見る"
                 >
-                  サービス詳細
+                  サービスを見る
                 </Button>
                 <Button
-                  size={{ base: "lg", md: "xl" }}
+                  size="lg"
                   variant="outline"
                   colorPalette="gray"
-                  px={{ base: "8", md: "12" }}
-                  py={{ base: "3", md: "4" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="600"
-                  w={{ base: "full", sm: "auto" }}
-                  borderRadius="xl"
+                  px="8"
+                  py="6"
+                  fontSize="md"
+                  fontWeight="500"
+                  borderRadius="full"
+                  aria-label="資料請求フォームを開く"
                 >
-                  会社案内
+                  資料請求
                 </Button>
-              </Stack>
-            </Stack>
-            <Box order={{ base: "1", lg: "2" }} position="relative">
+              </HStack>
+            </VStack>
+            <Box position="relative">
               <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop&auto=format"
-                alt="Digital transformation and technology innovation"
-                borderRadius={{ base: "2xl", md: "3xl" }}
-                shadow="2xl"
-                width="100%"
-                height={{ base: "300px", md: "450px", lg: "550px" }}
-                objectFit="cover"
-              />
-              <Box
-                position="absolute"
-                top="-4"
-                right="-4"
-                w="20"
-                h="20"
-                bg="teal.500"
-                borderRadius="full"
-                display={{ base: "none", lg: "block" }}
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=800&fit=crop&auto=format"
+                alt="デジタルトランスフォーメーションのイメージ - グローバルネットワークと技術革新"
+                width={800}
+                height={600}
+                style={{
+                  borderRadius: "1rem",
+                  width: "100%",
+                  height: "auto",
+                  aspectRatio: "4/3",
+                  objectFit: "cover",
+                  filter: "grayscale(20%)",
+                }}
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
               />
             </Box>
           </Grid>
         </Container>
       </Box>
 
-      {/* Our Services Section */}
-      <Box py={{ base: "20", md: "28", lg: "36" }} bg="white" id="services">
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
-          <Stack gap={{ base: "16", md: "18", lg: "20" }}>
-            <Stack
-              gap={{ base: "6", md: "8" }}
-              maxW="4xl"
-              mx="auto"
-              textAlign="center"
-            >
+      {/* Services Section - Grid-based like condense.jp */}
+      <Box py={{ base: "20", md: "32" }} bg="gray.50" id="services">
+        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
+          <VStack gap="20" align="start">
+            <VStack gap="6" maxW="3xl" align="start">
               <Text
-                color="teal.600"
+                fontSize="sm"
                 fontWeight="600"
+                color="gray.500"
                 textTransform="uppercase"
-                letterSpacing="widest"
-                fontSize={{ base: "sm", md: "md" }}
+                letterSpacing="wider"
+                role="doc-subtitle"
               >
-                事業内容
+                Services
               </Text>
               <Heading
-                size={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                fontWeight="900"
+                as="h2"
+                size={{ base: "4xl", md: "6xl" }}
+                fontWeight="800"
                 color="gray.900"
-                lineHeight={{ base: "1.2", md: "1.1" }}
+                lineHeight="1.1"
                 letterSpacing="tight"
               >
                 私たちのサービス
               </Heading>
               <Text
-                fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
+                fontSize={{ base: "lg", md: "xl" }}
                 color="gray.600"
-                lineHeight={{ base: "1.7", md: "1.6" }}
-                maxW="3xl"
-                mx="auto"
+                lineHeight="1.8"
               >
                 企画から実装まで、ワンストップでお客様の課題を解決します。
               </Text>
-            </Stack>
+            </VStack>
 
             <Grid
-              templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
-              gap={{ base: "10", md: "12", lg: "16" }}
-              maxW="6xl"
-              mx="auto"
+              templateColumns={{
+                base: "1fr",
+                md: "repeat(2, 1fr)",
+                xl: "repeat(3, 1fr)",
+              }}
+              gap="8"
+              role="list"
+              aria-label="提供サービス一覧"
             >
-              <Card.Root
-                p="0"
-                shadow="lg"
-                bg="white"
-                border="2px"
-                borderColor="gray.100"
-                borderRadius="3xl"
-                overflow="hidden"
-                _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
-                transition="all 0.3s ease"
-              >
-                <Stack gap="0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=250&fit=crop&auto=format"
-                    alt="IT consulting and technology strategy"
-                    width="100%"
-                    height={{ base: "200px", md: "220px" }}
-                    objectFit="cover"
-                  />
-                  <Box p={{ base: "6", md: "8" }} textAlign="center">
-                    <Stack gap={{ base: "4", md: "6" }}>
-                      <Heading
-                        size={{ base: "xl", md: "2xl" }}
-                        color="gray.900"
-                        fontWeight="800"
-                        lineHeight={{ base: "1.3", md: "1.2" }}
-                      >
-                        ITコンサルティング
-                      </Heading>
-                      <Text
-                        color="gray.600"
-                        lineHeight={{ base: "1.7", md: "1.6" }}
-                        fontSize={{ base: "md", md: "lg" }}
-                      >
-                        システム導入から運用改善まで、
-                        御社のIT戦略をトータルでサポートします。
-                      </Text>
-                    </Stack>
-                  </Box>
-                </Stack>
-              </Card.Root>
-
-              <Card.Root
-                p="0"
-                shadow="lg"
-                bg="white"
-                border="2px"
-                borderColor="gray.100"
-                borderRadius="3xl"
-                overflow="hidden"
-                _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
-                transition="all 0.3s ease"
-              >
-                <Stack gap="0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&h=250&fit=crop&auto=format"
-                    alt="Digital transformation and business innovation"
-                    width="100%"
-                    height={{ base: "200px", md: "220px" }}
-                    objectFit="cover"
-                  />
-                  <Box p={{ base: "6", md: "8" }} textAlign="center">
-                    <Stack gap={{ base: "4", md: "6" }}>
-                      <Heading
-                        size={{ base: "xl", md: "2xl" }}
-                        color="gray.900"
-                        fontWeight="800"
-                        lineHeight={{ base: "1.3", md: "1.2" }}
-                      >
-                        DX推進支援
-                      </Heading>
-                      <Text
-                        color="gray.600"
-                        lineHeight={{ base: "1.7", md: "1.6" }}
-                        fontSize={{ base: "md", md: "lg" }}
-                      >
-                        デジタル化の企画から実行まで、
-                        事業競争力の向上をお手伝いします。
-                      </Text>
-                    </Stack>
-                  </Box>
-                </Stack>
-              </Card.Root>
-
-              <Card.Root
-                p="0"
-                shadow="lg"
-                bg="white"
-                border="2px"
-                borderColor="gray.100"
-                borderRadius="3xl"
-                overflow="hidden"
-                _hover={{ shadow: "xl", transform: "translateY(-4px)" }}
-                transition="all 0.3s ease"
-              >
-                <Stack gap="0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=250&fit=crop&auto=format"
-                    alt="Professional team collaboration and talent solutions"
-                    width="100%"
-                    height={{ base: "200px", md: "220px" }}
-                    objectFit="cover"
-                  />
-                  <Box p={{ base: "6", md: "8" }} textAlign="center">
-                    <Stack gap={{ base: "4", md: "6" }}>
-                      <Heading
-                        size={{ base: "xl", md: "2xl" }}
-                        color="gray.900"
-                        fontWeight="800"
-                        lineHeight={{ base: "1.3", md: "1.2" }}
-                      >
-                        人材ソリューション
-                      </Heading>
-                      <Text
-                        color="gray.600"
-                        lineHeight={{ base: "1.7", md: "1.6" }}
-                        fontSize={{ base: "md", md: "lg" }}
-                      >
-                        豊富な経験を持つエキスパートが、
-                        御社のプロジェクトを成功へと導きます。
-                      </Text>
-                    </Stack>
-                  </Box>
-                </Stack>
-              </Card.Root>
+              {[
+                {
+                  title: "ITコンサルティング",
+                  description:
+                    "経営課題から要件に落とし込み、PoC〜本番化まで伴走。クラウド/データ/AIの設計と実装で、投資対効果を最大化します。",
+                  image:
+                    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format",
+                  altText:
+                    "ITコンサルティングサービス - データ分析とクラウド技術",
+                },
+                {
+                  title: "DX推進支援",
+                  description:
+                    '現場ヒアリングと業務設計を起点に、ツール導入だけで終わらない"定着"まで支援。小さく早く成果を出す進め方を徹底します。',
+                  image:
+                    "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format",
+                  altText: "DX推進支援サービス - デジタル化による業務改革",
+                },
+                {
+                  title: "人材ソリューション",
+                  description:
+                    "即戦力のアサインから内製化設計まで。採用と育成を両輪で支え、プロジェクト成功確度を高めます。",
+                  image:
+                    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&auto=format",
+                  altText:
+                    "人材ソリューションサービス - チームワークと人材育成",
+                },
+                {
+                  title: "受託開発",
+                  description:
+                    '速く、壊れにくく、拡張しやすく。事業の"次の一手"を最短で形にします。',
+                  image:
+                    "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop&auto=format",
+                  altText:
+                    "受託開発サービス - ソフトウェア開発とプログラミング",
+                },
+                {
+                  title: "VIPキャスティング",
+                  description:
+                    "最適なインフルエンサーと企業を、確実かつ透明に結ぶプラットフォーム。",
+                  image:
+                    "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&auto=format",
+                  altText:
+                    "VIPキャスティングサービス - インフルエンサーマーケティング",
+                },
+              ].map((service, index) => (
+                <Card.Root
+                  key={index}
+                  p="0"
+                  bg="white"
+                  borderRadius="xl"
+                  overflow="hidden"
+                  _hover={{ transform: "translateY(-4px)" }}
+                  transition="all 0.3s ease"
+                  border="none"
+                  role="listitem"
+                  aria-label={`${service.title}の詳細`}
+                >
+                  <VStack gap="0" align="stretch">
+                    <Box position="relative">
+                      <Image
+                        src={service.image}
+                        alt={service.altText}
+                        width={600}
+                        height={240}
+                        style={{
+                          width: "100%",
+                          height: "240px",
+                          objectFit: "cover",
+                          filter: "grayscale(30%)",
+                        }}
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </Box>
+                    <Box p="8">
+                      <VStack gap="4" align="start">
+                        <Heading
+                          as="h3"
+                          size="xl"
+                          color="gray.900"
+                          fontWeight="700"
+                          lineHeight="1.2"
+                        >
+                          {service.title}
+                        </Heading>
+                        <Text color="gray.600" lineHeight="1.7" fontSize="md">
+                          {service.description}
+                        </Text>
+                      </VStack>
+                    </Box>
+                  </VStack>
+                </Card.Root>
+              ))}
             </Grid>
-          </Stack>
+          </VStack>
         </Container>
       </Box>
 
-      {/* About Us Section */}
-      <Box py={{ base: "20", md: "28", lg: "36" }} bg="gray.50" id="about">
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
-          <Stack gap={{ base: "16", md: "18", lg: "20" }}>
-            <Stack
-              gap={{ base: "6", md: "8" }}
-              maxW="4xl"
-              mx="auto"
-              textAlign="center"
-            >
+      {/* About Section - Clean layout inspired by condense.jp */}
+      <Box py={{ base: "20", md: "32" }} bg="white" id="about">
+        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
+          <VStack gap="20" align="start">
+            <VStack gap="6" maxW="3xl" align="start">
               <Text
-                color="teal.600"
+                fontSize="sm"
                 fontWeight="600"
+                color="gray.500"
                 textTransform="uppercase"
-                letterSpacing="widest"
-                fontSize={{ base: "sm", md: "md" }}
+                letterSpacing="wider"
+                role="doc-subtitle"
               >
-                会社情報
+                About
               </Text>
               <Heading
-                size={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                fontWeight="900"
+                as="h2"
+                size={{ base: "4xl", md: "6xl" }}
+                fontWeight="800"
                 color="gray.900"
-                lineHeight={{ base: "1.2", md: "1.1" }}
+                lineHeight="1.1"
                 letterSpacing="tight"
               >
-                Hibi Holdingsについて
+                Hibi Holdings について
               </Heading>
-              <Text
-                fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
-                color="gray.600"
-                lineHeight={{ base: "1.7", md: "1.6" }}
-                maxW="3xl"
-                mx="auto"
-              >
-                私たちは戦略からテクノロジーまで幅広い専門性を持つチームです。
-                お客様と共に、困難な課題にも果敢に取り組みます。
-              </Text>
-            </Stack>
+            </VStack>
 
             <Grid
               templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
-              gap={{ base: "12", md: "16", lg: "20" }}
-              alignItems="stretch"
-              maxW="6xl"
-              mx="auto"
+              gap="16"
+              alignItems="start"
             >
-              <Flex direction="column">
-                <Stack gap={{ base: "8", md: "10", lg: "12" }} flex="1">
-                  <Box
-                    bg="white"
-                    p={{ base: "6", md: "8", lg: "10" }}
-                    borderRadius="3xl"
-                    shadow="lg"
-                    border="2px"
-                    borderColor="gray.100"
-                    flex="1"
+              <VStack gap="10" align="start">
+                <Box>
+                  <Heading
+                    as="h3"
+                    size="2xl"
+                    color="gray.900"
+                    fontWeight="700"
+                    mb="6"
+                    lineHeight="1.2"
                   >
-                    <Heading
-                      size={{ base: "xl", md: "2xl", lg: "3xl" }}
-                      color="gray.900"
-                      fontWeight="800"
-                      mb={{ base: "4", md: "6" }}
-                      lineHeight={{ base: "1.3", md: "1.2" }}
-                    >
-                      私たちのアプローチ
-                    </Heading>
-                    <Text
-                      color="gray.600"
-                      lineHeight={{ base: "1.7", md: "1.6" }}
-                      fontSize={{ base: "md", md: "lg", lg: "xl" }}
-                    >
-                      お客様との信頼関係を何より大切にしています。
-                      御社固有の課題をしっかりとヒアリングし、
-                      長期的な視点で最適なソリューションをご提案します。
-                    </Text>
-                  </Box>
-                  <Box
-                    bg="white"
-                    p={{ base: "6", md: "8", lg: "10" }}
-                    borderRadius="3xl"
-                    shadow="lg"
-                    border="2px"
-                    borderColor="gray.100"
-                    flex="1"
+                    代表メッセージ
+                  </Heading>
+                  <Text color="gray.600" lineHeight="1.8" fontSize="lg">
+                    私たちは、テクノロジーを「できる」に変える実装力で、お客様の競争力を磨き続けます。短期の成果と長期の基盤づくりを両立させる——それが私たちの仕事です。
+                  </Text>
+                  <Text color="gray.500" fontSize="md" mt="6" fontWeight="500">
+                    日比 亜希子 代表取締役
+                  </Text>
+                </Box>
+
+                <Box>
+                  <Heading
+                    as="h3"
+                    size="2xl"
+                    color="gray.900"
+                    fontWeight="700"
+                    mb="6"
+                    lineHeight="1.2"
                   >
-                    <Heading
-                      size={{ base: "xl", md: "2xl", lg: "3xl" }}
-                      color="gray.900"
-                      fontWeight="800"
-                      mb={{ base: "4", md: "6" }}
-                      lineHeight={{ base: "1.3", md: "1.2" }}
-                    >
-                      私たちの強み
-                    </Heading>
-                    <Text
-                      color="gray.600"
-                      lineHeight={{ base: "1.7", md: "1.6" }}
-                      fontSize={{ base: "md", md: "lg", lg: "xl" }}
-                    >
-                      創業以来10年にわたり、様々な業界のお客様と
-                      お取引いただいております。これまでの豊富な実績と
-                      ノウハウで、御社の成長をお手伝いします。
-                    </Text>
-                  </Box>
-                </Stack>
-              </Flex>
-              <Box position="relative" flex="1">
+                    私たちのアプローチ
+                  </Heading>
+                  <Text color="gray.600" lineHeight="1.8" fontSize="lg">
+                    お客様との信頼関係を何より大切にしています。御社固有の課題をしっかりとヒアリングし、長期的な視点で最適なソリューションをご提案します。
+                  </Text>
+                </Box>
+              </VStack>
+
+              <Box>
                 <Image
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                  alt="Hibi Holdings team"
-                  borderRadius={{ base: "2xl", md: "3xl" }}
-                  width="100%"
-                  height="100%"
-                  objectFit="cover"
-                  shadow="2xl"
-                />
-                <Box
-                  position="absolute"
-                  top="-6"
-                  left="-6"
-                  w="24"
-                  h="24"
-                  bg="teal.500"
-                  borderRadius="full"
-                  display={{ base: "none", lg: "block" }}
+                  alt="Hibi Holdingsチーム - 協力してプロジェクトに取り組むメンバー"
+                  width={800}
+                  height={500}
+                  style={{
+                    borderRadius: "0.75rem",
+                    width: "100%",
+                    height: "500px",
+                    objectFit: "cover",
+                    filter: "grayscale(20%)",
+                  }}
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </Box>
             </Grid>
 
-            <Stack gap={{ base: "12", md: "16", lg: "20" }}>
-              <Grid
-                templateColumns={{ base: "1fr", sm: "repeat(3, 1fr)" }}
-                gap={{ base: "8", md: "12" }}
-                maxW="6xl"
-                mx="auto"
-              >
-                <Card.Root
-                  bg="white"
-                  borderRadius="3xl"
-                  p={{ base: "8", md: "10", lg: "12" }}
-                  shadow="xl"
-                  border="2px"
-                  borderColor="gray.100"
-                  textAlign="center"
-                >
-                  <Heading
-                    size={{ base: "4xl", md: "5xl", lg: "6xl" }}
-                    color="teal.600"
-                    fontWeight="900"
-                    mb={{ base: "3", md: "4" }}
-                    lineHeight="1.1"
-                  >
-                    150+
-                  </Heading>
-                  <Text
-                    color="gray.600"
-                    fontSize={{ base: "lg", md: "xl" }}
-                    fontWeight="600"
-                    letterSpacing="wide"
-                  >
-                    プロジェクト実績
-                  </Text>
-                </Card.Root>
-
-                <Card.Root
-                  bg="white"
-                  borderRadius="3xl"
-                  p={{ base: "8", md: "10", lg: "12" }}
-                  shadow="xl"
-                  border="2px"
-                  borderColor="gray.100"
-                  textAlign="center"
-                >
-                  <Heading
-                    size={{ base: "4xl", md: "5xl", lg: "6xl" }}
-                    color="teal.600"
-                    fontWeight="900"
-                    mb={{ base: "3", md: "4" }}
-                    lineHeight="1.1"
-                  >
-                    10年
-                  </Heading>
-                  <Text
-                    color="gray.600"
-                    fontSize={{ base: "lg", md: "xl" }}
-                    fontWeight="600"
-                    letterSpacing="wide"
-                  >
-                    業界経験
-                  </Text>
-                </Card.Root>
-
-                <Card.Root
-                  bg="white"
-                  borderRadius="3xl"
-                  p={{ base: "8", md: "10", lg: "12" }}
-                  shadow="xl"
-                  border="2px"
-                  borderColor="gray.100"
-                  textAlign="center"
-                >
-                  <Heading
-                    size={{ base: "4xl", md: "5xl", lg: "6xl" }}
-                    color="teal.600"
-                    fontWeight="900"
-                    mb={{ base: "3", md: "4" }}
-                    lineHeight="1.1"
-                  >
-                    98%
-                  </Heading>
-                  <Text
-                    color="gray.600"
-                    fontSize={{ base: "lg", md: "xl" }}
-                    fontWeight="600"
-                    letterSpacing="wide"
-                  >
-                    顧客満足度
-                  </Text>
-                </Card.Root>
-              </Grid>
-
-              <Grid
-                templateColumns={{ base: "1fr", lg: "0.4fr 0.6fr" }}
-                gap={{ base: "12", md: "16", lg: "20" }}
-                alignItems="center"
-              >
-                <Box position="relative" flex="1">
-                  <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=600&fit=crop&auto=format"
-                    alt="Modern office space"
-                    borderRadius={{ base: "2xl", md: "3xl" }}
-                    width="100%"
-                    height={{ base: "300px", md: "400px", lg: "500px" }}
-                    objectFit="cover"
-                    shadow="2xl"
-                  />
-                  <Box
-                    position="absolute"
-                    bottom="-6"
-                    right="-6"
-                    w="16"
-                    h="16"
-                    bg="teal.500"
-                    borderRadius="full"
-                    display={{ base: "none", lg: "block" }}
-                  />
-                </Box>
-
-                <Box
-                  flex="2"
-                  bg="white"
-                  borderRadius="3xl"
-                  p={{ base: "8", md: "12", lg: "16" }}
-                  shadow="xl"
-                  border="2px"
-                  borderColor="gray.100"
-                  w="full"
-                >
-                  <Heading
-                    size={{ base: "lg", md: "xl", lg: "2xl" }}
-                    color="gray.900"
-                    fontWeight="800"
-                    mb={{ base: "6", md: "8" }}
-                    lineHeight={{ base: "1.3", md: "1.2" }}
-                  >
-                    会社基本情報
-                  </Heading>
-                  <Table.Root size={{ base: "sm", md: "md" }}>
-                    <Table.Body>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          会社名
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          株式会社Hibi Holdings
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          設立
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          2014年4月
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          資本金
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          1,000万円
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          代表者
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          代表取締役 田中 太郎
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          所在地
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          〒150-0001
-                          <br />
-                          東京都渋谷区神宮前1-1-1
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          従業員数
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          45名
-                        </Table.Cell>
-                      </Table.Row>
-                      <Table.Row>
-                        <Table.Cell
-                          fontWeight="700"
-                          color="gray.700"
-                          bg="gray.50"
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          borderRadius="lg"
-                        >
-                          事業内容
-                        </Table.Cell>
-                        <Table.Cell
-                          p={{ base: "3", md: "4" }}
-                          fontSize={{ base: "sm", md: "md" }}
-                          color="gray.800"
-                        >
-                          ITコンサルティング
-                          <br />
-                          DX推進支援
-                          <br />
-                          人材ソリューション
-                        </Table.Cell>
-                      </Table.Row>
-                    </Table.Body>
-                  </Table.Root>
-                </Box>
-              </Grid>
-            </Stack>
-          </Stack>
-        </Container>
-      </Box>
-
-      {/* Contact Section */}
-      <Box py={{ base: "20", md: "28", lg: "36" }} bg="gray.50" id="contact">
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
-          <Stack
-            gap={{ base: "16", md: "20", lg: "24" }}
-            maxW="5xl"
-            mx="auto"
-            textAlign="center"
-          >
-            <Stack gap={{ base: "6", md: "8" }}>
-              <Text
-                color="teal.600"
-                fontWeight="600"
-                textTransform="uppercase"
-                letterSpacing="widest"
-                fontSize={{ base: "sm", md: "md" }}
-              >
-                お問い合わせ
-              </Text>
+            {/* Company Info Table */}
+            <Box bg="gray.50" borderRadius="xl" p="10" w="100%">
               <Heading
-                size={{ base: "3xl", md: "5xl", lg: "6xl" }}
-                fontWeight="900"
+                as="h3"
+                size="2xl"
                 color="gray.900"
-                lineHeight={{ base: "1.2", md: "1.1" }}
-                letterSpacing="tight"
+                fontWeight="700"
+                mb="8"
+                lineHeight="1.2"
               >
-                一緒に未来を
-                <Box as="br" display={{ base: "block", lg: "none" }} />
-                創りませんか
+                会社基本情報
               </Heading>
-              <Text
-                fontSize={{ base: "lg", md: "xl", lg: "2xl" }}
-                color="gray.600"
-                lineHeight={{ base: "1.7", md: "1.6" }}
-                maxW="3xl"
-                mx="auto"
+              <Grid
+                templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
+                gap="6"
               >
-                御社の事業をさらに発展させませんか？
-                どのようなお悩みでも、まずはお気軽にご相談ください。
-              </Text>
-            </Stack>
-
-            <Card.Root
-              p={{ base: "8", md: "10", lg: "12" }}
-              shadow="xl"
-              border="2px"
-              borderColor="gray.200"
-              borderRadius="3xl"
-              bg="white"
-              maxW="3xl"
-              mx="auto"
-              w="full"
-            >
-                <Stack gap={{ base: "6", md: "8" }}>
-                  <Heading
-                    size={{ base: "lg", md: "xl", lg: "2xl" }}
-                    color="gray.900"
-                    fontWeight="800"
-                    lineHeight={{ base: "1.3", md: "1.2" }}
-                    textAlign="left"
-                  >
-                    お気軽にお問い合わせください
-                  </Heading>
-                  <Grid
-                    templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
-                    gap={{ base: "4", md: "6" }}
-                  >
-                    <Box>
-                      <Text
-                        fontWeight="600"
-                        mb="3"
-                        color="gray.700"
-                        fontSize={{ base: "md", md: "lg" }}
-                      >
-                        お名前 *
-                      </Text>
-                      <Input
-                        placeholder="山田太郎"
-                        size={{ base: "md", md: "lg" }}
-                        borderRadius="xl"
-                        border="2px"
-                        borderColor="gray.200"
-                        _focus={{ borderColor: "teal.500", shadow: "md" }}
-                        h={{ lg: "12" }}
-                      />
-                    </Box>
-
-                    <Box>
-                      <Text
-                        fontWeight="600"
-                        mb="3"
-                        color="gray.700"
-                        fontSize={{ base: "md", md: "lg" }}
-                      >
-                        メールアドレス *
-                      </Text>
-                      <Input
-                        placeholder="yamada@example.com"
-                        size={{ base: "md", md: "lg" }}
-                        borderRadius="xl"
-                        border="2px"
-                        borderColor="gray.200"
-                        _focus={{ borderColor: "teal.500", shadow: "md" }}
-                        h={{ lg: "12" }}
-                      />
-                    </Box>
-                  </Grid>
-
-                  <Box>
+                {[
+                  {
+                    label: "会社名",
+                    value: "Ｈｉｂｉ Ｈｏｌｄｉｎｇｓ株式会社",
+                  },
+                  { label: "代表者", value: "代表取締役 日比 亜希子" },
+                  { label: "設立", value: "2025年5月" },
+                  { label: "資本金", value: "500万円" },
+                  { label: "従業員数", value: "5名" },
+                  { label: "法人番号", value: "6010401190086" },
+                  {
+                    label: "所在地",
+                    value:
+                      "〒106-0041\n東京都港区麻布台3丁目4番4号\nコンフォリア麻布台",
+                  },
+                  {
+                    label: "事業内容",
+                    value:
+                      "ITコンサルティング／DX推進支援／人材ソリューション／受託開発／VIPキャスティング",
+                  },
+                ].map((item, index) => (
+                  <Flex key={index} gap="4" align="start">
                     <Text
+                      fontSize="sm"
                       fontWeight="600"
-                      mb="3"
-                      color="gray.700"
-                      fontSize={{ base: "md", md: "lg" }}
+                      color="gray.500"
+                      minW="20"
+                      pt="1"
                     >
-                      会社名
+                      {item.label}
                     </Text>
-                    <Input
-                      placeholder="株式会社○○"
-                      size={{ base: "md", md: "lg" }}
-                      borderRadius="xl"
-                      border="2px"
-                      borderColor="gray.200"
-                      _focus={{ borderColor: "teal.500", shadow: "md" }}
-                      h={{ lg: "12" }}
-                    />
-                  </Box>
-
-                  <Box>
                     <Text
-                      fontWeight="600"
-                      mb="3"
                       color="gray.700"
-                      fontSize={{ base: "md", md: "lg" }}
+                      lineHeight="1.6"
+                      whiteSpace="pre-line"
                     >
-                      お問い合わせ内容 *
+                      {item.value}
                     </Text>
-                    <Textarea
-                      placeholder="プロジェクトの詳細やご質問をお聞かせください..."
-                      minH={{ base: "120px", md: "140px", lg: "160px" }}
-                      size={{ base: "md", md: "lg" }}
-                      borderRadius="xl"
-                      border="2px"
-                      borderColor="gray.200"
-                      _focus={{ borderColor: "teal.500", shadow: "md" }}
-                    />
-                  </Box>
-
-                  <Button
-                    colorPalette="teal"
-                    size={{ base: "lg", md: "xl" }}
-                    fontWeight="700"
-                    w="full"
-                    py={{ base: "3", md: "4" }}
-                    fontSize={{ base: "md", md: "lg" }}
-                    borderRadius="xl"
-                    shadow="md"
-                    _hover={{ shadow: "lg", transform: "translateY(-2px)" }}
-                    transition="all 0.3s ease"
-                  >
-                    送信する
-                  </Button>
-                </Stack>
-              </Card.Root>
-          </Stack>
+                  </Flex>
+                ))}
+              </Grid>
+            </Box>
+          </VStack>
         </Container>
       </Box>
 
-      {/* Footer */}
-      <Box bg="gray.900" color="white" py={{ base: "16", md: "20", lg: "24" }}>
-        <Container
-          maxW={{ base: "container.md", lg: "container.lg", xl: "1200px" }}
-          px={{ base: "6", md: "10", lg: "12", xl: "16" }}
-        >
+      {/* Footer - Minimal like condense.jp */}
+      <Box bg="gray.900" color="white" py="20" role="contentinfo">
+        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
           <Grid
-            templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }}
-            gap={{ base: "8", md: "12", lg: "16" }}
-            maxW="6xl"
-            mx="auto"
+            templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
+            gap="12"
           >
-            <Stack gap={{ base: "5", md: "6" }}>
+            <VStack gap="6" align="start">
               <Heading
-                size={{ base: "lg", md: "xl", lg: "2xl" }}
+                as="h4"
+                size="xl"
                 color="white"
-                fontWeight="900"
+                fontWeight="700"
                 letterSpacing="tight"
               >
                 Hibi Holdings
               </Heading>
-              <Text
-                color="gray.300"
-                lineHeight={{ base: "1.7", md: "1.6" }}
-                fontSize={{ base: "md", md: "lg" }}
-                maxW="sm"
-              >
-                最新技術と戦略で、 お客様の未来を共に創ります。
+              <Text color="gray.400" lineHeight="1.7" fontSize="sm">
+                テクノロジーと経営実装をつなぎ、事業の&ldquo;次の一手&rdquo;を最短で形にします。
               </Text>
-            </Stack>
+            </VStack>
 
-            <Stack gap={{ base: "5", md: "6" }}>
-              <Heading
-                size={{ base: "md", md: "lg" }}
-                color="white"
-                fontWeight="700"
-              >
+            <VStack gap="4" align="start">
+              <Heading as="h4" size="md" color="white" fontWeight="600">
                 サービス
               </Heading>
-              <Stack gap={{ base: "3", md: "4" }}>
-                <Link
-                  href="#services"
-                  color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
-                >
-                  ITコンサルティング
-                </Link>
-                <Link
-                  href="#services"
-                  color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
-                >
-                  DX推進支援
-                </Link>
-                <Link
-                  href="#services"
-                  color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
-                >
-                  人材ソリューション
-                </Link>
-              </Stack>
-            </Stack>
+              <VStack gap="2" align="start">
+                {[
+                  "ITコンサルティング",
+                  "DX推進支援",
+                  "人材ソリューション",
+                  "受託開発",
+                  "VIPキャスティング",
+                ].map((service) => (
+                  <Link
+                    key={service}
+                    href="#services"
+                    color="gray.400"
+                    _hover={{ color: "white" }}
+                    fontSize="sm"
+                    transition="color 0.2s"
+                    aria-label={`${service}サービスの詳細へ移動`}
+                  >
+                    {service}
+                  </Link>
+                ))}
+              </VStack>
+            </VStack>
 
-            <Stack gap={{ base: "5", md: "6" }}>
-              <Heading
-                size={{ base: "md", md: "lg" }}
-                color="white"
-                fontWeight="700"
-              >
+            <VStack gap="4" align="start">
+              <Heading as="h4" size="md" color="white" fontWeight="600">
                 会社情報
               </Heading>
-              <Stack gap={{ base: "3", md: "4" }}>
+              <VStack gap="2" align="start">
+                {[
+                  "会社概要",
+                  "お問い合わせ",
+                  "プライバシーポリシー",
+                  "利用規約",
+                ].map((item) => (
+                  <Link
+                    key={item}
+                    href="#about"
+                    color="gray.400"
+                    _hover={{ color: "white" }}
+                    fontSize="sm"
+                    transition="color 0.2s"
+                    aria-label={`${item}ページへ移動`}
+                  >
+                    {item}
+                  </Link>
+                ))}
+              </VStack>
+            </VStack>
+
+            <VStack gap="4" align="start">
+              <Heading as="h4" size="md" color="white" fontWeight="600">
+                お問い合わせ
+              </Heading>
+              <VStack gap="2" fontSize="sm" color="gray.400" align="start">
+                <Text>東京都港区麻布台3-4-4</Text>
+                <Text>コンフォリア麻布台</Text>
                 <Link
-                  href="#about"
+                  href="mailto:contact@hibi-holdings.com"
                   color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
+                  _hover={{ color: "white" }}
+                  aria-label="メールでお問い合わせ"
                 >
-                  会社概要
+                  contact@hibi-holdings.com
                 </Link>
-                <Link
-                  href="#contact"
-                  color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
-                >
-                  お問い合わせ
-                </Link>
-                <Link
-                  href="#"
-                  color="gray.400"
-                  _hover={{ color: "teal.400" }}
-                  fontSize={{ base: "md", md: "lg" }}
-                  fontWeight="500"
-                  transition="color 0.2s ease"
-                >
-                  プライバシーポリシー
-                </Link>
-              </Stack>
-            </Stack>
+              </VStack>
+            </VStack>
           </Grid>
 
-          <Box
-            borderTop="1px"
-            borderColor="gray.700"
-            mt={{ base: "12", md: "16", lg: "20" }}
-            pt={{ base: "8", md: "10", lg: "12" }}
-          >
+          <Box borderTop="1px solid" borderColor="gray.700" mt="16" pt="8">
             <Flex
               justify="space-between"
               align="center"
-              wrap="wrap"
-              gap={{ base: "4", md: "6" }}
               direction={{ base: "column", md: "row" }}
+              gap="4"
               textAlign={{ base: "center", md: "left" }}
-              maxW="6xl"
-              mx="auto"
             >
-              <Text
-                color="gray.400"
-                fontSize={{ base: "md", md: "lg" }}
-                fontWeight="500"
-              >
-                © 2024 Hibi Holdings. All rights reserved.
+              <Text color="gray.500" fontSize="sm">
+                © 2025 Hibi Holdings. All rights reserved.
               </Text>
-              <Text
-                color="gray.400"
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="500"
-                wordBreak="break-all"
-              >
-                東京都渋谷区 | contact@hibi-holdings.com
+              <Text color="gray.500" fontSize="sm">
+                法人番号: 6010401190086
               </Text>
             </Flex>
           </Box>
