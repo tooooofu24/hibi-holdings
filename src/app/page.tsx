@@ -10,6 +10,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import Image from "next/image";
+import { Footer } from "./components/Footer";
 import { ScrollHeader } from "./components/Header/ScrollHeader";
 import { Hero } from "./components/Hero";
 
@@ -294,118 +295,7 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Footer - Minimal like condense.jp */}
-      <Box bg="gray.900" color="white" py="20" role="contentinfo">
-        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
-          <Grid
-            templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
-            gap="12"
-          >
-            <VStack gap="6" align="start">
-              <Heading
-                as="h4"
-                size="xl"
-                color="white"
-                fontWeight="700"
-                letterSpacing="tight"
-              >
-                Hibi Holdings
-              </Heading>
-              <Text color="gray.400" lineHeight="1.7" fontSize="sm">
-                テクノロジーと経営実装をつなぎ、事業の&ldquo;次の一手&rdquo;を最短で形にします。
-              </Text>
-            </VStack>
-
-            <VStack gap="4" align="start">
-              <Heading as="h4" size="md" color="white" fontWeight="600">
-                サービス
-              </Heading>
-              <VStack gap="2" align="start">
-                {[
-                  "ITコンサルティング",
-                  "DX推進支援",
-                  "人材ソリューション",
-                  "受託開発",
-                  "VIPキャスティング",
-                ].map((service) => (
-                  <Link
-                    key={service}
-                    href="#services"
-                    color="gray.400"
-                    _hover={{ color: "white" }}
-                    fontSize="sm"
-                    transition="color 0.2s"
-                    aria-label={`${service}サービスの詳細へ移動`}
-                  >
-                    {service}
-                  </Link>
-                ))}
-              </VStack>
-            </VStack>
-
-            <VStack gap="4" align="start">
-              <Heading as="h4" size="md" color="white" fontWeight="600">
-                会社情報
-              </Heading>
-              <VStack gap="2" align="start">
-                {[
-                  "会社概要",
-                  "お問い合わせ",
-                  "プライバシーポリシー",
-                  "利用規約",
-                ].map((item) => (
-                  <Link
-                    key={item}
-                    href="#about"
-                    color="gray.400"
-                    _hover={{ color: "white" }}
-                    fontSize="sm"
-                    transition="color 0.2s"
-                    aria-label={`${item}ページへ移動`}
-                  >
-                    {item}
-                  </Link>
-                ))}
-              </VStack>
-            </VStack>
-
-            <VStack gap="4" align="start">
-              <Heading as="h4" size="md" color="white" fontWeight="600">
-                お問い合わせ
-              </Heading>
-              <VStack gap="2" fontSize="sm" color="gray.400" align="start">
-                <Text>東京都港区麻布台3-4-4</Text>
-                <Text>コンフォリア麻布台</Text>
-                <Link
-                  href="mailto:contact@hibi-holdings.com"
-                  color="gray.400"
-                  _hover={{ color: "white" }}
-                  aria-label="メールでお問い合わせ"
-                >
-                  contact@hibi-holdings.com
-                </Link>
-              </VStack>
-            </VStack>
-          </Grid>
-
-          <Box borderTop="1px solid" borderColor="gray.700" mt="16" pt="8">
-            <Flex
-              justify="space-between"
-              align="center"
-              direction={{ base: "column", md: "row" }}
-              gap="4"
-              textAlign={{ base: "center", md: "left" }}
-            >
-              <Text color="gray.500" fontSize="sm">
-                © 2025 Hibi Holdings. All rights reserved.
-              </Text>
-              <Text color="gray.500" fontSize="sm">
-                法人番号: 6010401190086
-              </Text>
-            </Flex>
-          </Box>
-        </Container>
-      </Box>
+      <Footer />
     </Box>
   );
 }
