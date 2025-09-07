@@ -2,7 +2,7 @@
 
 import { Box, Button, Container, Flex, Heading, Icon } from "@chakra-ui/react";
 import { Montserrat } from "next/font/google";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { VscMenu } from "react-icons/vsc";
 import { HeaderDrawer } from "./HeaderDrawer";
 
@@ -12,18 +12,12 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
-export function Header() {
+interface HeaderProps {
+  isLightMode?: boolean;
+}
+
+export function Header({ isLightMode = true }: HeaderProps) {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > window.innerHeight * 0.9);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <>
@@ -41,7 +35,7 @@ export function Header() {
           maxW="7xl"
           pl={{ base: "6", md: "8" }}
           py={{ base: "4", md: "6" }}
-          className={scrolled ? "light" : "dark"}
+          className={isLightMode ? "light" : "dark"}
         >
           <Flex align="center" justify="space-between">
             <Heading
