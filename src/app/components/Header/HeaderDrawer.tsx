@@ -71,6 +71,9 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
                 <HeaderLink href="/contact" onClick={handleClose}>
                   お問い合わせ
                 </HeaderLink>
+                <HeaderLink href="/privacy" onClick={handleClose}>
+                  プライバシーポリシー
+                </HeaderLink>
               </VStack>
             </Drawer.Body>
           </Drawer.Content>
