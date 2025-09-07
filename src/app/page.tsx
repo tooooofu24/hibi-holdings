@@ -1,230 +1,23 @@
 import {
   Box,
-  Button,
   Card,
   Container,
   Flex,
   Grid,
   Heading,
-  HStack,
   Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Montserrat } from "next/font/google";
 import Image from "next/image";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-});
+import { Header } from "./components/Header";
+import { Hero } from "./components/Hero";
 
 export default function Home() {
   return (
     <Box>
-      {/* Navigation - Cleaner, inspired by condense.jp */}
-      <Box
-        bg="white"
-        position="sticky"
-        top="0"
-        zIndex="sticky"
-        borderBottom="1px solid"
-        borderColor="gray.100"
-        role="navigation"
-        aria-label="メインナビゲーション"
-      >
-        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
-          <Flex h="20" align="center" justify="space-between">
-            <Box
-              fontWeight="800"
-              fontSize="2xl"
-              color="gray.900"
-              letterSpacing="tight"
-              role="banner"
-              className={montserrat.className}
-            >
-              Hibi Holdings
-            </Box>
-            <HStack
-              gap="10"
-              align="center"
-              display={{ base: "none", lg: "flex" }}
-            >
-              <Link
-                href="#services"
-                fontSize="sm"
-                fontWeight="500"
-                color="gray.600"
-                _hover={{ color: "gray.900" }}
-                transition="color 0.2s"
-                aria-label="事業内容セクションへ移動"
-              >
-                事業内容
-              </Link>
-              <Link
-                href="#about"
-                fontSize="sm"
-                fontWeight="500"
-                color="gray.600"
-                _hover={{ color: "gray.900" }}
-                transition="color 0.2s"
-                aria-label="会社情報セクションへ移動"
-              >
-                会社情報
-              </Link>
-              <Link
-                href="#contact"
-                fontSize="sm"
-                fontWeight="500"
-                color="gray.600"
-                _hover={{ color: "gray.900" }}
-                transition="color 0.2s"
-                aria-label="お問い合わせセクションへ移動"
-              >
-                お問い合わせ
-              </Link>
-              <Button
-                size="sm"
-                colorPalette="gray"
-                variant="solid"
-                px="6"
-                py="2"
-                borderRadius="full"
-                fontSize="sm"
-                fontWeight="500"
-                aria-label="資料請求フォームを開く"
-              >
-                資料請求
-              </Button>
-            </HStack>
-            <Box display={{ base: "block", lg: "none" }}>
-              <Button
-                variant="ghost"
-                size="sm"
-                aria-label="メニューを開く"
-                aria-expanded="false"
-              >
-                ≡
-              </Button>
-            </Box>
-          </Flex>
-        </Container>
-      </Box>
-
-      {/* Hero Section - Bold, minimal like condense.jp */}
-      <Box py={{ base: "20", md: "32", lg: "40" }} bg="white">
-        <Container maxW="7xl" px={{ base: "6", md: "8" }}>
-          <Grid
-            templateColumns={{ base: "1fr", lg: "1.2fr 0.8fr" }}
-            gap={{ base: "16", lg: "20" }}
-            alignItems="center"
-          >
-            <VStack gap={{ base: "12", md: "16" }} align="start">
-              <VStack gap="8" align="start">
-                <Text
-                  fontSize="sm"
-                  fontWeight="600"
-                  color="gray.500"
-                  textTransform="uppercase"
-                  letterSpacing="wider"
-                  role="doc-subtitle"
-                >
-                  Hibi Holdings
-                </Text>
-                <VStack gap="4" align="start">
-                  <Heading
-                    as="h1"
-                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
-                    fontWeight="800"
-                    color="gray.900"
-                    lineHeight="0.9"
-                    letterSpacing="tight"
-                  >
-                    未来を創る
-                  </Heading>
-                  <Heading
-                    as="span"
-                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
-                    fontWeight="800"
-                    color="gray.400"
-                    lineHeight="0.9"
-                    letterSpacing="tight"
-                  >
-                    デジタル
-                  </Heading>
-                  <Heading
-                    as="span"
-                    size={{ base: "5xl", md: "6xl", lg: "7xl" }}
-                    fontWeight="800"
-                    color="gray.900"
-                    lineHeight="0.9"
-                    letterSpacing="tight"
-                  >
-                    ソリューション
-                  </Heading>
-                </VStack>
-                <Text
-                  fontSize={{ base: "lg", md: "xl" }}
-                  color="gray.600"
-                  lineHeight="1.8"
-                  fontWeight="400"
-                  maxW="2xl"
-                  role="doc-subtitle"
-                >
-                  テクノロジーと経営実装をつなぎ、事業の&ldquo;次の一手&rdquo;を最短で形にします。
-                </Text>
-              </VStack>
-              <HStack gap="4">
-                <Button
-                  size="lg"
-                  colorPalette="gray"
-                  variant="solid"
-                  px="8"
-                  py="6"
-                  fontSize="md"
-                  fontWeight="500"
-                  borderRadius="full"
-                  aria-label="サービス詳細を見る"
-                >
-                  サービスを見る
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  colorPalette="gray"
-                  px="8"
-                  py="6"
-                  fontSize="md"
-                  fontWeight="500"
-                  borderRadius="full"
-                  aria-label="資料請求フォームを開く"
-                >
-                  資料請求
-                </Button>
-              </HStack>
-            </VStack>
-            <Box position="relative">
-              <Image
-                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=800&fit=crop&auto=format"
-                alt="デジタルトランスフォーメーションのイメージ - グローバルネットワークと技術革新"
-                width={800}
-                height={600}
-                style={{
-                  borderRadius: "1rem",
-                  width: "100%",
-                  height: "auto",
-                  aspectRatio: "4/3",
-                  objectFit: "cover",
-                  filter: "grayscale(20%)",
-                }}
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-              />
-            </Box>
-          </Grid>
-        </Container>
-      </Box>
+      <Header />
+      <Hero />
 
       {/* Services Section - Grid-based like condense.jp */}
       <Box py={{ base: "20", md: "32" }} bg="gray.50" id="services">
@@ -318,50 +111,32 @@ export default function Home() {
               ].map((service, index) => (
                 <Card.Root
                   key={index}
-                  p="0"
-                  bg="white"
-                  borderRadius="xl"
+                  size="lg"
+                  variant="outline"
                   overflow="hidden"
                   _hover={{ transform: "translateY(-4px)" }}
                   transition="all 0.3s ease"
-                  border="none"
                   role="listitem"
                   aria-label={`${service.title}の詳細`}
                 >
-                  <VStack gap="0" align="stretch">
-                    <Box position="relative">
-                      <Image
-                        src={service.image}
-                        alt={service.altText}
-                        width={600}
-                        height={240}
-                        style={{
-                          width: "100%",
-                          height: "240px",
-                          objectFit: "cover",
-                          filter: "grayscale(30%)",
-                        }}
-                        loading="lazy"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      />
-                    </Box>
-                    <Box p="8">
-                      <VStack gap="4" align="start">
-                        <Heading
-                          as="h3"
-                          size="xl"
-                          color="gray.900"
-                          fontWeight="700"
-                          lineHeight="1.2"
-                        >
-                          {service.title}
-                        </Heading>
-                        <Text color="gray.600" lineHeight="1.7" fontSize="md">
-                          {service.description}
-                        </Text>
-                      </VStack>
-                    </Box>
-                  </VStack>
+                  <Image
+                    src={service.image}
+                    alt={service.altText}
+                    width={600}
+                    height={240}
+                    style={{
+                      width: "100%",
+                      height: "240px",
+                      objectFit: "cover",
+                      filter: "grayscale(30%)",
+                    }}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <Card.Body>
+                    <Card.Title>{service.title}</Card.Title>
+                    <Card.Description>{service.description}</Card.Description>
+                  </Card.Body>
                 </Card.Root>
               ))}
             </Grid>
