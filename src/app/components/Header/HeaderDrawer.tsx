@@ -62,7 +62,7 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
                 <HeaderLink href="#services" onClick={handleClose}>
                   事業内容
                 </HeaderLink>
-                <HeaderLink href="#about" onClick={handleClose}>
+                <HeaderLink href="/about" onClick={handleClose}>
                   会社情報
                 </HeaderLink>
                 <HeaderLink href="/documents" onClick={handleClose}>

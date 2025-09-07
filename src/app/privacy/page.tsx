@@ -2,6 +2,7 @@ import { Alert, Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { PageHeader } from "../components/PageHeader";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -22,9 +23,7 @@ export default function PrivacyPage() {
         >
           <VStack gap="12" align="stretch">
             <VStack gap="4" align="stretch">
-              <Heading textStyle={{ base: "2xl", md: "3xl" }}>
-                プライバシーポリシー
-              </Heading>
+              <PageHeader title="プライバシーポリシー" />
               <Text color="fg.muted" textStyle="sm">
                 最終更新日：2025年9月8日
               </Text>

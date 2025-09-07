@@ -1,7 +1,8 @@
-import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { PageHeader } from "../components/PageHeader";
 import { DocumentsForm } from "./components/DocumentsForm";
 
 export const metadata: Metadata = {
@@ -21,24 +22,11 @@ export default function DocumentsPage() {
           py={{ base: "20", md: "36" }}
           px={{ base: "8", md: "12" }}
         >
-          <VStack gap={{ base: "20", md: "32" }} align="center">
-            <VStack gap="4" textAlign="center">
-              <Heading
-                textStyle={{ base: "2xl", md: "3xl" }}
-                fontWeight="700"
-                color="gray.900"
-              >
-                資料請求
-              </Heading>
-              <Text
-                color="gray.600"
-                lineHeight="1.6"
-                fontSize={{ base: "sm", md: "md" }}
-                px={{ base: "2", md: "0" }}
-              >
-                会社資料・サービス詳細資料をご請求いただけます。内容を確認後、メールにて資料をお送りさせていただきます。
-              </Text>
-            </VStack>
+          <VStack gap={{ base: "16", md: "24" }} align="stretch">
+            <PageHeader
+              title="資料請求"
+              description="会社資料・サービス詳細資料をご請求いただけます。内容を確認後、メールにて資料をお送りさせていただきます。"
+            />
 
             <DocumentsForm />
           </VStack>

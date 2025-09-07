@@ -2,6 +2,7 @@ import { Alert, Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { PageHeader } from "../components/PageHeader";
 
 export const metadata: Metadata = {
   title: "利用規約",
@@ -22,7 +23,7 @@ export default function TermsPage() {
         >
           <VStack gap="12" align="stretch">
             <VStack gap="4" align="stretch">
-              <Heading textStyle={{ base: "2xl", md: "3xl" }}>利用規約</Heading>
+              <PageHeader title="利用規約" />
               <Text color="fg.muted" textStyle="sm">
                 最終更新日：2025年9月8日
               </Text>
