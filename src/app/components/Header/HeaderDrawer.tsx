@@ -61,7 +61,7 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
               justifyContent="center"
             >
               <VStack gap="8" align="center">
-                <HeaderLink href="#services" onClick={handleClose}>
+                <HeaderLink href="/services" onClick={handleClose}>
                   事業内容
                 </HeaderLink>
                 <HeaderLink href="/about" onClick={handleClose}>
