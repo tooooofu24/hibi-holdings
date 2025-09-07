@@ -1,8 +1,17 @@
-import { Box, Container, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  DataList,
+  Image,
+  Text,
+  Timeline,
+  VStack,
+} from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { PageHeader } from "../components/PageHeader";
+import { SectionTitle } from "./components/SectionTitle";
 
 export const metadata: Metadata = {
   title: "会社情報 | Hibi Holdings",
@@ -22,181 +31,100 @@ export default function AboutPage() {
           px={{ base: "8", md: "12" }}
         >
           <VStack gap="24" align="stretch">
-            <PageHeader title="ABOUT" description="会社情報" />
+            <PageHeader
+              title="会社情報"
+              description="Hibi Holdings株式会社について"
+            />
 
             <VStack gap="20" align="stretch">
               {/* MESSAGE */}
               <Box>
-                <Heading 
-                  as="h2" 
-                  textStyle="xl" 
-                  mb="8" 
-                  letterSpacing="wider"
-                  fontWeight="medium"
-                >
-                  MESSAGE
-                </Heading>
+                <SectionTitle>代表メッセージ</SectionTitle>
                 <Text textStyle="lg" lineHeight="tall" mb="6">
                   私たちは、テクノロジーを「できる」に変える実装力で、お客様の競争力を磨き続けます。短期の成果と長期の基盤づくりを両立させる——それが私たちの仕事です。
                 </Text>
-                <Text textStyle="md" color="fg.muted">
+                <Text textStyle="md" color="fg.muted" mb="8">
                   代表取締役　日比 亜希子
                 </Text>
               </Box>
 
+              <Image
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="代表メッセージ"
+                borderRadius="lg"
+                aspectRatio="16/9"
+                objectFit="cover"
+              />
+
               {/* OUTLINE */}
               <Box>
-                <Heading 
-                  as="h2" 
-                  textStyle="xl" 
-                  mb="8" 
-                  letterSpacing="wider"
-                  fontWeight="medium"
+                <SectionTitle>会社概要</SectionTitle>
+                <DataList.Root
+                  orientation="horizontal"
+                  size="lg"
+                  divideY="1px"
+                  maxW="4xl"
                 >
-                  OUTLINE
-                </Heading>
-                <VStack gap="3" align="stretch">
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      会社名
-                    </Text>
-                    <Text flex="1" textAlign="right">
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>会社名</DataList.ItemLabel>
+                    <DataList.ItemValue>
                       Ｈｉｂｉ　Ｈｏｌｄｉｎｇｓ株式会社
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      代表者
-                    </Text>
-                    <Text flex="1" textAlign="right">
+                    </DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>代表者</DataList.ItemLabel>
+                    <DataList.ItemValue>
                       代表取締役　日比 亜希子
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      設立
-                    </Text>
-                    <Text flex="1" textAlign="right">
-                      2025年5月
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      資本金
-                    </Text>
-                    <Text flex="1" textAlign="right">
-                      500万円
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      所在地
-                    </Text>
-                    <Text flex="1" textAlign="right">
+                    </DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>設立</DataList.ItemLabel>
+                    <DataList.ItemValue>2025年5月</DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>資本金</DataList.ItemLabel>
+                    <DataList.ItemValue>500万円</DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>所在地</DataList.ItemLabel>
+                    <DataList.ItemValue>
                       〒106-0041　東京都港区麻布台3丁目4番4号　コンフォリア麻布台
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      従業員数
-                    </Text>
-                    <Text flex="1" textAlign="right">
-                      5名
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      法人番号
-                    </Text>
-                    <Text flex="1" textAlign="right">
-                      6010401190086
-                    </Text>
-                  </HStack>
-                  <HStack
-                    justify="space-between"
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="120px" color="fg.muted" textStyle="sm">
-                      事業内容
-                    </Text>
-                    <Text flex="1" textAlign="right">
+                    </DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>従業員数</DataList.ItemLabel>
+                    <DataList.ItemValue>5名</DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>法人番号</DataList.ItemLabel>
+                    <DataList.ItemValue>6010401190086</DataList.ItemValue>
+                  </DataList.Item>
+                  <DataList.Item pt="4">
+                    <DataList.ItemLabel>事業内容</DataList.ItemLabel>
+                    <DataList.ItemValue>
                       ITコンサルティング／DX推進支援／人材ソリューション
-                    </Text>
-                  </HStack>
-                </VStack>
+                    </DataList.ItemValue>
+                  </DataList.Item>
+                </DataList.Root>
               </Box>
 
               {/* HISTORY */}
               <Box>
-                <Heading 
-                  as="h2" 
-                  textStyle="xl" 
-                  mb="8" 
-                  letterSpacing="wider"
-                  fontWeight="medium"
-                >
-                  HISTORY
-                </Heading>
-                <VStack gap="3" align="stretch">
-                  <HStack
-                    align="flex-start"
-                    py="4"
-                    borderBottom="1px solid"
-                    borderColor="border.muted"
-                  >
-                    <Text fontWeight="medium" minW="100px" color="fg.muted" textStyle="sm">
-                      2025年5月
-                    </Text>
-                    <Text flex="1">
-                      Ｈｉｂｉ　Ｈｏｌｄｉｎｇｓ株式会社設立
-                    </Text>
-                  </HStack>
-                </VStack>
+                <SectionTitle>沿革</SectionTitle>
+                <Timeline.Root variant="subtle" size="md">
+                  <Timeline.Item>
+                    <Timeline.Connector>
+                      <Timeline.Separator />
+                      <Timeline.Indicator />
+                    </Timeline.Connector>
+                    <Timeline.Content>
+                      <Timeline.Title>
+                        Ｈｉｂｉ　Ｈｏｌｄｉｎｇｓ株式会社設立
+                      </Timeline.Title>
+                      <Timeline.Description>2025年5月</Timeline.Description>
+                    </Timeline.Content>
+                  </Timeline.Item>
+                </Timeline.Root>
               </Box>
             </VStack>
           </VStack>
