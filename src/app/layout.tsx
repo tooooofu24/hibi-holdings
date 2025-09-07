@@ -1,8 +1,8 @@
 import { Provider } from "@/components/chakra-ui/provider";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import { organizationJsonLd } from "./jsonld";
-import { metadata as siteMetadata } from "./metadata";
+import { metadata as siteMetadata } from "@/lib/metadata";
+import { organizationJsonLd } from "@/lib/jsonld";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
