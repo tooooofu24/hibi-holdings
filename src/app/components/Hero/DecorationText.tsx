@@ -17,7 +17,7 @@ export function DecorationText({ children, color }: DecorationTextProps) {
         width: "full",
         height: "25%",
         position: "absolute",
-        bottom: 1,
+        bottom: 2,
         left: 0,
         bg: color,
         zIndex: -1,
