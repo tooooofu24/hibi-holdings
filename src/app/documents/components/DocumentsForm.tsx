@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { HiArrowRight } from "react-icons/hi2";
 
-export function MaterialsForm() {
+export function DocumentsForm() {
   const orientation = useBreakpointValue({
     base: undefined,
     md: "horizontal" as const,

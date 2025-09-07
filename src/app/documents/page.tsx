@@ -2,7 +2,7 @@ import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
-import { MaterialsForm } from "./components/MaterialsForm";
+import { DocumentsForm } from "./components/DocumentsForm";
 
 export const metadata: Metadata = {
   title: "資料請求",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     "Hibi Holdingsの会社資料をご請求いただけます。サービス詳細資料や会社案内資料をお送りいたします。",
 };
 
-export default function MaterialsPage() {
+export default function DocumentsPage() {
   return (
     <Box>
       <Header isLightMode />
@@ -40,7 +40,7 @@ export default function MaterialsPage() {
               </Text>
             </VStack>
 
-            <MaterialsForm />
+            <DocumentsForm />
           </VStack>
         </Container>
       </Box>
