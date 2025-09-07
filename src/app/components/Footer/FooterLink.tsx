@@ -1,8 +1,9 @@
 import { Link } from "@chakra-ui/react";
 import NextLink from "next/link";
+import type { ComponentProps } from "react";
 
 interface FooterLinkProps {
-  href: string;
+  href: ComponentProps<typeof NextLink>["href"];
   children: React.ReactNode;
   ariaLabel?: string;
 }

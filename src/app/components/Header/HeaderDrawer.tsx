@@ -8,11 +8,10 @@ import {
   Drawer,
   Flex,
   Icon,
-  Link,
   VStack,
 } from "@chakra-ui/react";
-import NextLink from "next/link";
 import { VscClose } from "react-icons/vsc";
+import { HeaderLink } from "./HeaderLink";
 
 interface HeaderDrawerProps {
   open: boolean;
@@ -60,33 +59,18 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
               justifyContent="center"
             >
               <VStack align="center" gap="8">
-                <Link
-                  asChild
-                  onClick={handleClose}
-                  colorPalette="gray"
-                  fontSize="lg"
-                  _hover={{ color: "rgba(255, 255, 255, 0.8)" }}
-                >
-                  <NextLink href="#services">事業内容</NextLink>
-                </Link>
-                <Link
-                  asChild
-                  colorPalette="gray"
-                  onClick={handleClose}
-                  fontSize="lg"
-                  _hover={{ color: "rgba(255, 255, 255, 0.8)" }}
-                >
-                  <NextLink href="#about">会社情報</NextLink>
-                </Link>
-                <Link
-                  asChild
-                  colorPalette="gray"
-                  onClick={handleClose}
-                  fontSize="lg"
-                  _hover={{ color: "rgba(255, 255, 255, 0.8)" }}
-                >
-                  <NextLink href="#contact">お問い合わせ</NextLink>
-                </Link>
+                <HeaderLink href="#services" onClick={handleClose}>
+                  事業内容
+                </HeaderLink>
+                <HeaderLink href="#about" onClick={handleClose}>
+                  会社情報
+                </HeaderLink>
+                <HeaderLink href="/materials" onClick={handleClose}>
+                  資料請求
+                </HeaderLink>
+                <HeaderLink href="/contact" onClick={handleClose}>
+                  お問い合わせ
+                </HeaderLink>
               </VStack>
             </Drawer.Body>
           </Drawer.Content>
