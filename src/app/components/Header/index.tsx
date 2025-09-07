@@ -2,6 +2,7 @@
 
 import { Box, Button, Container, Flex, Heading, Icon } from "@chakra-ui/react";
 import { Montserrat } from "next/font/google";
+import NextLink from "next/link";
 import { useState } from "react";
 import { VscMenu } from "react-icons/vsc";
 import { HeaderDrawer } from "./HeaderDrawer";
@@ -38,16 +39,18 @@ export function Header({ isLightMode = true }: HeaderProps) {
           className={isLightMode ? "light" : "dark"}
         >
           <Flex align="center" justify="space-between">
-            <Heading
-              size="3xl"
-              letterSpacing="tight"
-              role="banner"
-              className={montserrat.className}
-              color="fg"
-              transition="color 0.3s ease"
-            >
-              Hibi Holdings
-            </Heading>
+            <NextLink href="/">
+              <Heading
+                size="3xl"
+                letterSpacing="tight"
+                role="banner"
+                className={montserrat.className}
+                color="fg"
+                transition="color 0.3s ease"
+              >
+                Hibi Holdings
+              </Heading>
+            </NextLink>
             <Button
               colorPalette="gray"
               variant="ghost"
