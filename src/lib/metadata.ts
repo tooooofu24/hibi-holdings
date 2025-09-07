@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "ITコンサルティング",
-    "DX推進支援", 
+    "DX推進支援",
     "人材ソリューション",
     "受託開発",
     "VIPキャスティング",

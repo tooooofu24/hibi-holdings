@@ -13,7 +13,7 @@ import { FooterLink } from "./FooterLink";
 export function Footer() {
   return (
     <DarkMode>
-      <Box bg="bg.muted" py="20" role="contentinfo">
+      <Box bg="bg.muted" py={{ base: "12", md: "20" }} role="contentinfo">
         <Container maxW="7xl" px={{ base: "6", md: "8" }}>
           <Grid
             templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }}
@@ -98,7 +98,7 @@ export function Footer() {
             </VStack>
           </Grid>
 
-          <Box borderTop="1px solid" borderColor="border.muted" mt="16" pt="8">
+          <Box borderTop="1px solid" borderColor="border.muted" mt={{ base: "8", md: "16" }} pt={{ base: "6", md: "8" }}>
             <Flex
               justify="space-between"
               align="center"

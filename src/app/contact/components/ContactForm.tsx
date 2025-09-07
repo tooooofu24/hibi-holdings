@@ -18,7 +18,12 @@ export function ContactForm() {
   const flex = useBreakpointValue({ base: undefined, md: "1" });
 
   return (
-    <Stack gap="8" w="full" css={{ "--field-label-width": "25%" }}>
+    <Stack
+      gap={{ base: "6", md: "8" }}
+      w="full"
+      css={{ "--field-label-width": "25%" }}
+      px={{ base: "2", md: "0" }}
+    >
       <Field.Root required orientation={orientation}>
         <Field.Label>会社名</Field.Label>
         <Input variant="flushed" placeholder="株式会社○○" flex={flex} />
@@ -31,7 +36,12 @@ export function ContactForm() {
 
       <Field.Root required orientation={orientation}>
         <Field.Label>メールアドレス</Field.Label>
-        <Input variant="flushed" placeholder="example@company.com" type="email" flex={flex} />
+        <Input
+          variant="flushed"
+          placeholder="example@company.com"
+          type="email"
+          flex={flex}
+        />
       </Field.Root>
 
       <Field.Root required orientation={orientation}>
@@ -44,7 +54,11 @@ export function ContactForm() {
         />
       </Field.Root>
 
-      <Button size="lg" mt="20">
+      <Button
+        size={{ base: "md", md: "lg" }}
+        mt={{ base: "12", md: "20" }}
+        w={{ base: "full", md: "auto" }}
+      >
         送信する
         <HiArrowRight />
       </Button>

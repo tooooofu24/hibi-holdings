@@ -9,13 +9,26 @@ export default function ContactPage() {
       <Header isLightMode />
 
       <Box pt="16">
-        <Container maxW="5xl" py="36">
-          <VStack gap="32" align="center">
+        <Container
+          maxW="5xl"
+          py={{ base: "20", md: "36" }}
+          px={{ base: "8", md: "12" }}
+        >
+          <VStack gap={{ base: "20", md: "32" }} align="center">
             <VStack gap="4" textAlign="center">
-              <Heading textStyle="3xl" fontWeight="700" color="gray.900">
+              <Heading
+                textStyle={{ base: "2xl", md: "3xl" }}
+                fontWeight="700"
+                color="gray.900"
+              >
                 お問い合わせ
               </Heading>
-              <Text color="gray.600" lineHeight="1.6">
+              <Text
+                color="gray.600"
+                lineHeight="1.6"
+                fontSize={{ base: "sm", md: "md" }}
+                px={{ base: "2", md: "0" }}
+              >
                 メールでのお問合せ・ご相談は下記のフォームにご記入下さい。内容を確認後、メールにてお返事させて頂きます。
               </Text>
             </VStack>

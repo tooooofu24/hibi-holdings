@@ -42,7 +42,7 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
                 <Flex justify="end">
                   <Button
                     colorPalette="gray"
-                    variant="ghost"
+                    variant="plain"
                     size="xl"
                     aria-label="メニューを閉じる"
                     onClick={handleClose}

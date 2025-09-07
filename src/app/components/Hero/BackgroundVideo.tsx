@@ -5,9 +5,9 @@ interface BackgroundVideoProps {
   contrast?: number;
 }
 
-export function BackgroundVideo({ 
-  brightness = 0.4, 
-  contrast = 1.1 
+export function BackgroundVideo({
+  brightness = 0.4,
+  contrast = 1.1,
 }: BackgroundVideoProps) {
   return (
     <Box position="absolute" inset="0" zIndex="0" overflow="hidden">

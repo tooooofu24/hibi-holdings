@@ -5,7 +5,6 @@ import {
   Flex,
   Grid,
   Heading,
-  Link,
   Text,
   VStack,
 } from "@chakra-ui/react";
