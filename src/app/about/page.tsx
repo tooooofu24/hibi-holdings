@@ -26,7 +26,7 @@ export default function AboutPage() {
 
       <Box pt="8">
         <Container
-          maxW="4xl"
+          maxW="5xl"
           py={{ base: "20", md: "36" }}
           px={{ base: "8", md: "12" }}
         >
