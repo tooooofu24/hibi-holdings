@@ -8,6 +8,7 @@ import {
   Drawer,
   Flex,
   Icon,
+  Separator,
   VStack,
 } from "@chakra-ui/react";
 import { VscClose } from "react-icons/vsc";
@@ -55,10 +56,11 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
             </Box>
             <Drawer.Body
               display="flex"
+              flexDirection="column"
               alignItems="center"
               justifyContent="center"
             >
-              <VStack align="center" gap="8">
+              <VStack gap="8" align="center">
                 <HeaderLink href="#services" onClick={handleClose}>
                   事業内容
                 </HeaderLink>
@@ -71,14 +73,12 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
                 <HeaderLink href="/contact" onClick={handleClose}>
                   お問い合わせ
                 </HeaderLink>
-                <HeaderLink href="/privacy" onClick={handleClose}>
-                  プライバシーポリシー
-                </HeaderLink>
+                <Separator borderColor="border.inverted" w="full" size="xs" />
                 <HeaderLink href="/terms" onClick={handleClose}>
                   利用規約
                 </HeaderLink>
-                <HeaderLink href="/policy-antisocial" onClick={handleClose}>
-                  反社会的勢力排除基本方針
+                <HeaderLink href="/privacy" onClick={handleClose}>
+                  プライバシーポリシー
                 </HeaderLink>
               </VStack>
             </Drawer.Body>
