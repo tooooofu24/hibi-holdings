@@ -10,7 +10,7 @@ export function HeroTextMobile() {
       transform="translate(-50%, -50%)"
       w="full"
     >
-      <VStack align="center" gap="16">
+      <VStack align="center" gap="12">
         <VStack align="center" gap="2">
           <Heading
             textStyle="5xl"
@@ -25,8 +25,8 @@ export function HeroTextMobile() {
             <DecorationText color="orange.500">経営実装</DecorationText>
           </Heading>
         </VStack>
-        <Heading textStyle="lg" color="fg" textAlign="center">
-          事業の次の一手を&quot;最短&quot;で形に
+        <Heading textStyle="2xl" color="fg" textAlign="center">
+          事業の&quot;次の一手&quot;を最短で
         </Heading>
       </VStack>
     </Container>

@@ -17,12 +17,12 @@ export function Hero() {
         layerStyle="fill.solid"
       >
         <BackgroundVideo />
-        
+
         {/* SP用 */}
         <Box display={{ base: "block", md: "none" }}>
           <HeroTextMobile />
         </Box>
-        
+
         {/* PC用 */}
         <Box display={{ base: "none", md: "block" }}>
           <HeroTextDesktop />

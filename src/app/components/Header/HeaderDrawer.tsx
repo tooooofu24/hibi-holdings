@@ -74,6 +74,12 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
                 <HeaderLink href="/privacy" onClick={handleClose}>
                   プライバシーポリシー
                 </HeaderLink>
+                <HeaderLink href="/terms" onClick={handleClose}>
+                  利用規約
+                </HeaderLink>
+                <HeaderLink href="/policy-antisocial" onClick={handleClose}>
+                  反社会的勢力排除基本方針
+                </HeaderLink>
               </VStack>
             </Drawer.Body>
           </Drawer.Content>

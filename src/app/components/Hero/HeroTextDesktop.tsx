@@ -11,7 +11,7 @@ export function HeroTextDesktop() {
           <DecorationText color="orange.500">経営実装</DecorationText>
         </Heading>
         <Heading textStyle={{ base: "5xl", lg: "6xl" }} color="fg">
-          事業の次の一手を&quot;最短&quot;で形に
+          事業の&quot;次の一手&quot;を最短で
         </Heading>
       </VStack>
     </Container>
