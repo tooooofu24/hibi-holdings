@@ -22,7 +22,6 @@ export function ContactForm() {
       gap={{ base: "6", md: "8" }}
       w="full"
       css={{ "--field-label-width": "25%" }}
-      px={{ base: "2", md: "0" }}
     >
       <Field.Root required orientation={orientation}>
         <Field.Label>会社名</Field.Label>
