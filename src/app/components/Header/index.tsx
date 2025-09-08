@@ -36,6 +36,7 @@ export function Header({ isLightMode = true }: HeaderProps) {
           maxW="7xl"
           pl={{ base: "6", md: "8" }}
           py={{ base: "4", md: "6" }}
+          pr={{ base: "1", md: "2" }}
           className={isLightMode ? "light" : "dark"}
         >
           <Flex align="center" justify="space-between">

@@ -41,21 +41,36 @@ export function Footer() {
                 サービス
               </Heading>
               <VStack gap="2" align="start">
-                {[
-                  "ITコンサルティング",
-                  "DX推進支援",
-                  "人材ソリューション",
-                  "受託開発",
-                  "VIPキャスティング",
-                ].map((service) => (
-                  <FooterLink
-                    key={service}
-                    href="#services"
-                    ariaLabel={`${service}サービスの詳細へ移動`}
-                  >
-                    {service}
-                  </FooterLink>
-                ))}
+                <FooterLink
+                  href="/services"
+                  ariaLabel="ITコンサルティングサービスの詳細へ移動"
+                >
+                  ITコンサルティング
+                </FooterLink>
+                <FooterLink
+                  href="/services"
+                  ariaLabel="DX推進支援サービスの詳細へ移動"
+                >
+                  DX推進支援
+                </FooterLink>
+                <FooterLink
+                  href="/services"
+                  ariaLabel="人材ソリューションサービスの詳細へ移動"
+                >
+                  人材ソリューション
+                </FooterLink>
+                <FooterLink
+                  href="/services"
+                  ariaLabel="受託開発サービスの詳細へ移動"
+                >
+                  受託開発
+                </FooterLink>
+                <FooterLink
+                  href="/services"
+                  ariaLabel="VIPキャスティングサービスの詳細へ移動"
+                >
+                  VIPキャスティング
+                </FooterLink>
               </VStack>
             </VStack>
 
@@ -64,20 +79,24 @@ export function Footer() {
                 会社情報
               </Heading>
               <VStack gap="2" align="start">
-                {[
-                  "会社概要",
-                  "お問い合わせ",
-                  "プライバシーポリシー",
-                  "利用規約",
-                ].map((item) => (
-                  <FooterLink
-                    key={item}
-                    href="#about"
-                    ariaLabel={`${item}ページへ移動`}
-                  >
-                    {item}
-                  </FooterLink>
-                ))}
+                <FooterLink href="/about" ariaLabel="会社概要ページへ移動">
+                  会社概要
+                </FooterLink>
+                <FooterLink
+                  href="/contact"
+                  ariaLabel="お問い合わせページへ移動"
+                >
+                  お問い合わせ
+                </FooterLink>
+                <FooterLink
+                  href="/privacy"
+                  ariaLabel="プライバシーポリシーページへ移動"
+                >
+                  プライバシーポリシー
+                </FooterLink>
+                <FooterLink href="/terms" ariaLabel="利用規約ページへ移動">
+                  利用規約
+                </FooterLink>
               </VStack>
             </VStack>
 

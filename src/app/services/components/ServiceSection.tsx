@@ -26,7 +26,7 @@ export function ServiceSection({
     <Stack
       direction={{ base: "column", md: "row" }}
       align="start"
-      gap={{ base: "6", md: "12" }}
+      gap={{ base: "4", md: "8" }}
       py={{ base: "8", md: "12" }}
     >
       {/* 画像 */}
@@ -41,7 +41,6 @@ export function ServiceSection({
           w="full"
           h={{ base: "240px", md: "320px" }}
           objectFit="cover"
-          borderRadius={{ base: "md", md: "lg" }}
         />
       </Box>
 

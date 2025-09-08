@@ -154,23 +154,38 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Contact Section - Minimalist approach */}
       <Box py={{ base: "24", md: "40" }} id="contact">
         <Container maxW="5xl" px={{ base: "4", md: "6" }}>
-          <VStack gap={{ base: "16", md: "24" }} align="stretch">
-            <Box>
+          <VStack
+            gap={{ base: "12", md: "20" }}
+            align="stretch"
+            maxW="4xl"
+            mx="auto"
+          >
+            <Box textAlign="center">
               <Heading
                 as="h2"
-                fontSize={{ base: "lg", md: "xl" }}
+                fontSize={{ base: "xl", md: "2xl" }}
                 color="fg"
                 fontWeight="bold"
-                mb="6"
+                mb={{ base: "4", md: "6" }}
               >
-                お問い合わせ
+                お気軽にご相談ください
               </Heading>
+              <Text
+                textStyle={{ base: "md", md: "lg" }}
+                color="fg.muted"
+                maxW="2xl"
+                mx="auto"
+                lineHeight="1.7"
+              >
+                プロジェクトの課題や要件について、まずはお話を聞かせてください。
+                <br />
+                最適なソリューションをご提案いたします。
+              </Text>
             </Box>
 
-            <VStack gap="6" align="stretch">
+            <VStack gap={{ base: "4", md: "6" }} align="stretch">
               <ContactCard />
               <DocumentsCard />
             </VStack>
