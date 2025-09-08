@@ -25,11 +25,12 @@ export function ServiceCard({ title, image }: ServiceCardProps) {
         src={image}
         alt={title}
         fill
+        loading="lazy"
         style={{
           objectFit: "cover",
           filter: "grayscale(20%)",
         }}
-        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
       />
 
       <Box

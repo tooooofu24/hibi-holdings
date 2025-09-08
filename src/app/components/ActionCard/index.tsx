@@ -9,6 +9,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["700"],
   display: "swap",
+  preload: true,
 });
 
 interface ActionCardProps {

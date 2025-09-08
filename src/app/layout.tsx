@@ -8,6 +8,7 @@ const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = siteMetadata;
@@ -17,6 +18,8 @@ export default function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="ja" suppressHydrationWarning className={notoSansJP.variable}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

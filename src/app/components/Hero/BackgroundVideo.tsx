@@ -1,28 +1,27 @@
 import { Box } from "@chakra-ui/react";
 
-interface BackgroundVideoProps {
-  brightness?: number;
-  contrast?: number;
-}
-
-export function BackgroundVideo({
-  brightness = 0.4,
-  contrast = 1.1,
-}: BackgroundVideoProps) {
+export function BackgroundVideo() {
   return (
     <Box position="absolute" inset="0" zIndex="0" overflow="hidden">
+      {/* フォールバック用の黒背景（LCP改善） */}
+      <Box
+        position="absolute"
+        inset="0"
+        bg="black"
+        filter={`brightness(0.4) contrast(1.1)`}
+      />
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         aria-hidden="true"
         style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",
-          filter: `brightness(${brightness}) contrast(${contrast})`,
+          filter: `brightness(0.4) contrast(1.1)`,
         }}
       >
         <source
