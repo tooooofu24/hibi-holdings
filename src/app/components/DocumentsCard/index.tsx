@@ -6,7 +6,7 @@ export function DocumentsCard() {
       href="/documents"
       title="DOCUMENTS"
       subtitle="資料請求"
-      bg="bg.emphasized"
+      bg="gray.subtle"
     />
   );
 }

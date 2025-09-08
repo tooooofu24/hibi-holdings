@@ -6,7 +6,7 @@ export function ContactCard() {
       href="/contact"
       title="CONTACT US"
       subtitle="お問い合わせ"
-      bg="bg.info"
+      bg="cyan.subtle"
     />
   );
 }

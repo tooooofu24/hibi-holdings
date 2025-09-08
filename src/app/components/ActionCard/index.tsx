@@ -1,8 +1,15 @@
 import { DarkMode } from "@/components/chakra-ui/color-mode";
 import { Card, IconButton, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Montserrat } from "next/font/google";
 import NextLink from "next/link";
 import { ComponentProps } from "react";
 import { HiArrowRight } from "react-icons/hi2";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["700"],
+  display: "swap",
+});
 
 interface ActionCardProps {
   href: ComponentProps<typeof NextLink>["href"];
@@ -17,6 +24,7 @@ export function ActionCard({ href, title, subtitle, bg }: ActionCardProps) {
       <LinkBox asChild>
         <Card.Root
           bg={bg}
+          variant="subtle"
           transition="all 0.3s ease"
           _hover={{
             transform: "translateY(-4px)",
@@ -35,6 +43,7 @@ export function ActionCard({ href, title, subtitle, bg }: ActionCardProps) {
             <Card.Title
               mb={{ base: "2", md: "4" }}
               textStyle={{ base: "2xl", md: "3xl" }}
+              className={montserrat.className}
             >
               <LinkOverlay asChild>
                 <NextLink href={href}>{title}</NextLink>
