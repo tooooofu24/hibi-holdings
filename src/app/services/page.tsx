@@ -1,7 +1,7 @@
-import { Box, Button, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { HiArrowRight } from "react-icons/hi2";
+import { ContactCard } from "../components/ContactCard";
+import { DocumentsCard } from "../components/DocumentsCard";
 import { PageHeader } from "../components/PageHeader";
 import { PageLayout } from "../components/PageLayout";
 import { ServiceSection } from "./components/ServiceSection";
@@ -106,29 +106,23 @@ export default function ServicesPage() {
           ))}
         </VStack>
 
-        <Box textAlign="center" pt="12">
-          <VStack gap="6">
-            <Heading as="h2" textStyle="xl">
-              お気軽にご相談ください
-            </Heading>
-            <Text textStyle="lg" color="fg.muted" maxW="2xl">
-              プロジェクトの課題や要件について、まずはお話を聞かせてください。
-              最適なソリューションをご提案いたします。
-            </Text>
-            <HStack gap="4" flexDirection={{ base: "column", md: "row" }}>
-              <Button size="lg" asChild>
-                <Link href="/contact">
-                  お問い合わせ
-                  <HiArrowRight />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="/documents">
-                  資料請求
-                  <HiArrowRight />
-                </Link>
-              </Button>
-            </HStack>
+        <Box pt="16">
+          <VStack gap="16" align="stretch" maxW="4xl" mx="auto">
+            <Box textAlign="center">
+              <Heading as="h2" textStyle="xl" mb="4">
+                お気軽にご相談ください
+              </Heading>
+              <Text textStyle="lg" color="fg.muted" maxW="2xl" mx="auto">
+                プロジェクトの課題や要件について、まずはお話を聞かせてください。
+                <br />
+                最適なソリューションをご提案いたします。
+              </Text>
+            </Box>
+
+            <VStack gap="6" align="stretch">
+              <ContactCard />
+              <DocumentsCard />
+            </VStack>
           </VStack>
         </Box>
       </VStack>
