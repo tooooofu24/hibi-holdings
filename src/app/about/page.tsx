@@ -60,7 +60,7 @@ export default function AboutPage() {
               </DataList.Item>
               <DataList.Item pt="4">
                 <DataList.ItemLabel>設立</DataList.ItemLabel>
-                <DataList.ItemValue>2025年5月</DataList.ItemValue>
+                <DataList.ItemValue>2025年4月</DataList.ItemValue>
               </DataList.Item>
               <DataList.Item pt="4">
                 <DataList.ItemLabel>資本金</DataList.ItemLabel>
