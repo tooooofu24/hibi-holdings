@@ -1,7 +1,7 @@
 import { Box, DataList, Image, Text, Timeline, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
-import { PageLayout } from "../components/PageLayout";
 import { PageHeader } from "../components/PageHeader";
+import { PageLayout } from "../components/PageLayout";
 import { SectionTitle } from "./components/SectionTitle";
 
 export const metadata: Metadata = {
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   <Timeline.Title>
                     Ｈｉｂｉ　Ｈｏｌｄｉｎｇｓ株式会社設立
                   </Timeline.Title>
-                  <Timeline.Description>2025年5月</Timeline.Description>
+                  <Timeline.Description>2025年4月</Timeline.Description>
                 </Timeline.Content>
               </Timeline.Item>
             </Timeline.Root>
