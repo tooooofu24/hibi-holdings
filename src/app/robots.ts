@@ -7,6 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/"],
     },
-    sitemap: "https://hibi-holdings.vercel.app/sitemap.xml",
+    sitemap: [
+      "https://hibi-holdings.vercel.app/sitemap.xml",
+    ],
   };
 }
