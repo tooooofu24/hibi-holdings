@@ -19,7 +19,11 @@ export default function RootLayout(props: { children: React.ReactNode }) {
     <html lang="ja" suppressHydrationWarning className={notoSansJP.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

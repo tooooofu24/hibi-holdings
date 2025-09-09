@@ -5,7 +5,7 @@ export function HeroTextDesktop() {
   return (
     <Container position="absolute" bottom="20" right="12">
       <VStack align="end" gap="4">
-        <Heading textStyle={{ base: "5xl", lg: "6xl" }} color="fg">
+        <Heading as="h1" textStyle={{ base: "5xl", lg: "6xl" }} color="fg">
           <DecorationText color="blue.500">テクノロジー</DecorationText>
           {" × "}
           <DecorationText color="orange.500">経営実装</DecorationText>

@@ -22,9 +22,12 @@ import { PageLayout } from "../../components/PageLayout";
 import { PageHeader } from "../../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "VIPキャスティング | Hibi Holdings",
+  title: "VIPキャスティング",
   description:
-    "Hibi HoldingsのVIPキャスティングサービス。企業とインフルエンサーを最短距離で結ぶ、透明なマッチングプラットフォーム。案件管理も効果把握も、これ一つ。",
+    "企業とインフルエンサーを最短距離で結ぶマッチングプラットフォーム。詳細検索・案件管理・効果把握がワンストップ。法令遵守の透明な運用設計。",
+  alternates: {
+    canonical: "/services/vip-casting",
+  },
 };
 
 const valueProps = [

@@ -6,7 +6,10 @@ import { PageHeader } from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "反社会的勢力排除に関する基本方針",
   description:
-    "Hibi Holdings株式会社の反社会的勢力排除に関する基本方針です。当社の反社会的勢力に対する基本姿勢について記載しています。",
+    "Hibi Holdings株式会社の反社会的勢力排除基本方針。当社は反社会的勢力とは一切の関係を遮断し、毅然とした態度で対応いたします。",
+  alternates: {
+    canonical: "/policy-antisocial",
+  },
 };
 
 export default function PolicyAntisocialPage() {

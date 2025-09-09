@@ -5,9 +5,12 @@ import { PageLayout } from "../components/PageLayout";
 import { SectionTitle } from "./components/SectionTitle";
 
 export const metadata: Metadata = {
-  title: "会社情報 | Hibi Holdings",
+  title: "会社情報",
   description:
-    "Hibi Holdings株式会社の会社情報です。代表メッセージ、会社概要、沿革をご紹介いたします。",
+    "Hibi Holdings株式会社の会社概要、代表メッセージ、沿革をご紹介。テクノロジーと経営実装をつなぎ、事業の次の一手を最短で形にする企業理念をお伝えします。",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

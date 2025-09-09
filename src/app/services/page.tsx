@@ -7,9 +7,12 @@ import { PageLayout } from "../components/PageLayout";
 import { ServiceSection } from "./components/ServiceSection";
 
 export const metadata: Metadata = {
-  title: "事業内容 | Hibi Holdings",
+  title: "事業内容",
   description:
-    "Hibi Holdings株式会社の事業内容です。ITコンサルティング、DX推進支援、人材ソリューション、受託開発、VIPキャスティングの詳細をご紹介いたします。",
+    "ITコンサルティング、DX推進支援、人材ソリューション、受託開発、VIPキャスティングの5事業を展開。経営課題から技術実装まで一気通貫でサポートします。",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services: Array<{

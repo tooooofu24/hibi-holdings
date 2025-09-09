@@ -6,7 +6,10 @@ import { PageHeader } from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
-    "Hibi Holdings株式会社のプライバシーポリシーです。お客様の個人情報の取り扱いについて記載しています。",
+    "Hibi Holdings株式会社の個人情報保護方針。お客様の個人情報の収集・利用・管理について個人情報保護法に基づき適切に取り扱います。",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

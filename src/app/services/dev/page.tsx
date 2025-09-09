@@ -22,9 +22,12 @@ import { PageLayout } from "../../components/PageLayout";
 import { PageHeader } from "../../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "受託開発（システム開発） | Hibi Holdings",
+  title: "受託開発（システム開発）",
   description:
-    "Hibi Holdingsの受託開発サービス。速く・堅牢に・拡張可能に。価値あるプロダクトを最短で実現します。PoCから本番運用まで一気通貫でサポート。",
+    "速く・堅牢に・拡張可能に。PoCから本番運用まで一気通貫でサポート。Web・モバイル・AI開発から、クラウド設計・セキュリティまで少数精鋭で対応。",
+  alternates: {
+    canonical: "/services/dev",
+  },
 };
 
 const differentiators = [

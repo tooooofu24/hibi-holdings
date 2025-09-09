@@ -10,6 +10,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
+import type { Metadata } from "next";
 import NextLink from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
 import { ContactCard } from "../components/ContactCard";
@@ -18,6 +19,15 @@ import { Footer } from "../components/Footer";
 import { ScrollHeader } from "../components/Header/ScrollHeader";
 import { Hero } from "../components/Hero";
 import { ServiceCard } from "./components/ServiceCard";
+
+export const metadata: Metadata = {
+  title: "未来を創るデジタルソリューション",
+  description:
+    "テクノロジーと経営実装をつなぎ、事業の次の一手を最短で形にします。ITコンサル・DX推進・人材ソリューション・受託開発・VIPキャスティングを提供。",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   return (

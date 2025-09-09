@@ -13,6 +13,7 @@ export function HeroTextMobile() {
       <VStack align="center" gap="12">
         <VStack align="center" gap="2">
           <Heading
+            as="h1"
             textStyle="5xl"
             color="fg"
             textAlign="center"

@@ -6,7 +6,10 @@ import { PageHeader } from "../components/PageHeader";
 export const metadata: Metadata = {
   title: "利用規約",
   description:
-    "Hibi Holdings株式会社の利用規約です。当社サービスをご利用いただく際の条件について記載しています。",
+    "Hibi Holdings株式会社のサービス利用規約。当社サービスご利用時の条件、免責事項、知的財産権、禁止事項について定めています。",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

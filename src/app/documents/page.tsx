@@ -7,7 +7,10 @@ import { DocumentsForm } from "./components/DocumentsForm";
 export const metadata: Metadata = {
   title: "資料請求",
   description:
-    "Hibi Holdingsの会社資料をご請求いただけます。サービス詳細資料や会社案内資料をお送りいたします。",
+    "Hibi Holdingsの会社資料・サービス詳細資料をご請求いただけます。ITコンサル・DX推進・システム開発などの詳しい情報をお送りいたします。",
+  alternates: {
+    canonical: "/documents",
+  },
 };
 
 export default function DocumentsPage() {
