@@ -8,7 +8,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-
+import NextImage from "next/image";
 interface ServiceSectionProps {
   title: string;
   description: string;
@@ -41,7 +41,10 @@ export function ServiceSection({
           w="full"
           h={{ base: "240px", md: "320px" }}
           objectFit="cover"
-        />
+          asChild
+        >
+          <NextImage src={image} alt={title} width={320} height={180} />
+        </Image>
       </Box>
 
       {/* コンテンツ */}

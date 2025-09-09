@@ -1,10 +1,11 @@
 import { Box, DataList, Image, Text, Timeline, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
+import NextImage from "next/image";
+import { generateBreadcrumbJsonLd } from "../../lib/jsonld";
 import { PageHeader } from "../components/PageHeader";
 import { PageLayout } from "../components/PageLayout";
-import { SectionTitle } from "./components/SectionTitle";
 import { StructuredData } from "../components/StructuredData";
-import { generateBreadcrumbJsonLd } from "../../lib/jsonld";
+import { SectionTitle } from "./components/SectionTitle";
 
 export const metadata: Metadata = {
   title: "会社情報",
@@ -43,12 +44,19 @@ export default function AboutPage() {
           </Box>
 
           <Image
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&auto=format&fm=webp&q=85"
             alt="代表メッセージ"
             borderRadius="lg"
             aspectRatio="16/9"
             objectFit="cover"
-          />
+            asChild
+          >
+            <NextImage
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&auto=format&fm=webp&q=85"
+              alt="代表メッセージ"
+              width={1600}
+              height={900}
+            />
+          </Image>
 
           {/* OUTLINE */}
           <Box>
