@@ -26,14 +26,14 @@ import {
   generateBreadcrumbJsonLd,
 } from "../../../lib/jsonld";
 
-export const metadata: Metadata = {
+import { generatePageMetadata } from "../../../lib/og-images";
+
+export const metadata: Metadata = generatePageMetadata({
   title: "受託開発（システム開発）",
   description:
     "速く・堅牢に・拡張可能に。PoCから本番運用まで一気通貫でサポート。Web・モバイル・AI開発から、クラウド設計・セキュリティまで少数精鋭で対応。",
-  alternates: {
-    canonical: "/services/dev",
-  },
-};
+  path: "/services/dev",
+});
 
 const differentiators = [
   {

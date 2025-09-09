@@ -15,14 +15,14 @@ import {
   generateBreadcrumbJsonLd,
 } from "../../lib/jsonld";
 
-export const metadata: Metadata = {
+import { generatePageMetadata } from "../../lib/og-images";
+
+export const metadata: Metadata = generatePageMetadata({
   title: "事業内容",
   description:
     "ITコンサルティング、DX推進支援、人材ソリューション、受託開発、VIPキャスティングの5事業を展開。経営課題から技術実装まで一気通貫でサポートします。",
-  alternates: {
-    canonical: "/services",
-  },
-};
+  path: "/services",
+});
 
 const services: Array<{
   title: string;

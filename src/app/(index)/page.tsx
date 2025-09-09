@@ -19,15 +19,14 @@ import { Footer } from "../components/Footer";
 import { ScrollHeader } from "../components/Header/ScrollHeader";
 import { Hero } from "../components/Hero";
 import { ServiceCard } from "./components/ServiceCard";
+import { generatePageMetadata } from "../../lib/og-images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generatePageMetadata({
   title: "未来を創るデジタルソリューション",
   description:
     "テクノロジーと経営実装をつなぎ、事業の次の一手を最短で形にします。ITコンサル・DX推進・人材ソリューション・受託開発・VIPキャスティングを提供。",
-  alternates: {
-    canonical: "/",
-  },
-};
+  path: "/",
+});
 
 export default function Home() {
   return (
@@ -66,27 +65,27 @@ export default function Home() {
             >
               <ServiceCard
                 title="ITコンサルティング"
-                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=600&fit=crop&auto=format"
+                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=400&fit=crop&auto=format&fm=webp&q=80"
               />
 
               <ServiceCard
                 title="DX推進支援"
-                image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop&auto=format"
+                image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=400&fit=crop&auto=format&fm=webp&q=80"
               />
 
               <ServiceCard
                 title="人材ソリューション"
-                image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=600&fit=crop&auto=format"
+                image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=400&fit=crop&auto=format&fm=webp&q=80"
               />
 
               <ServiceCard
                 title="受託開発"
-                image="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=600&h=600&fit=crop&auto=format"
+                image="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=400&h=400&fit=crop&auto=format&fm=webp&q=80"
               />
 
               <ServiceCard
                 title="VIPキャスティング"
-                image="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=600&fit=crop&auto=format"
+                image="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=400&fit=crop&auto=format&fm=webp&q=80"
               />
 
               {/* 6個目の位置に「もっと見る」 */}

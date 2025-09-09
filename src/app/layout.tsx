@@ -24,6 +24,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           href="https://fonts.gstatic.com"
           crossOrigin=""
         />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#ffffff" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
