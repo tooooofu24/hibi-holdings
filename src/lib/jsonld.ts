@@ -5,8 +5,8 @@ export const organizationJsonLd = {
   name: "Ｈｉｂｉ Ｈｏｌｄｉｎｇｓ株式会社",
   alternateName: "Hibi Holdings",
   legalName: "Ｈｉｂｉ Ｈｏｌｄｉｎｇｓ株式会社",
-  url: "https://hibi-holdings.com",
-  logo: "https://hibi-holdings.com/logo.png",
+  url: "https://hibi-holdings.vercel.app",
+  logo: "https://hibi-holdings.vercel.app/logo.png",
   email: "contact@hibi-holdings.com",
   contactPoint: {
     "@type": "ContactPoint",
@@ -52,8 +52,8 @@ export const localBusinessJsonLd = {
   name: "Ｈｉｂｉ Ｈｏｌｄｉｎｇｓ株式会社",
   alternateName: "Hibi Holdings",
   legalName: "Ｈｉｂｉ Ｈｏｌｄｉｎｇｓ株式会社",
-  url: "https://hibi-holdings.com",
-  logo: "https://hibi-holdings.com/logo.png",
+  url: "https://hibi-holdings.vercel.app",
+  logo: "https://hibi-holdings.vercel.app/logo.png",
   email: "contact@hibi-holdings.com",
   contactPoint: {
     "@type": "ContactPoint",
@@ -189,6 +189,6 @@ export const generateBreadcrumbJsonLd = (
     "@type": "ListItem",
     position: index + 1,
     name: item.name,
-    item: `https://hibi-holdings.com${item.url}`,
+    item: `https://hibi-holdings.vercel.app${item.url}`,
   })),
 });
