@@ -1,8 +1,8 @@
 import { Provider } from "@/components/chakra-ui/provider";
+import { localBusinessJsonLd, organizationJsonLd } from "@/lib/jsonld";
+import { metadata as siteMetadata } from "@/lib/metadata";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import { metadata as siteMetadata } from "@/lib/metadata";
-import { organizationJsonLd, localBusinessJsonLd } from "@/lib/jsonld";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -27,6 +27,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
         <link rel="preconnect" href="https://images.unsplash.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
+        <meta
+          name="google-site-verification"
+          content="QUyMlvPlf2sBTOD7awUtlU2h2XcTQTA2Ha_clHwRmeI"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
