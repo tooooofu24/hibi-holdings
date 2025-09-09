@@ -2,7 +2,7 @@ import { Provider } from "@/components/chakra-ui/provider";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { metadata as siteMetadata } from "@/lib/metadata";
-import { organizationJsonLd } from "@/lib/jsonld";
+import { organizationJsonLd, localBusinessJsonLd } from "@/lib/jsonld";
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -28,6 +28,12 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
           }}
         />
       </head>

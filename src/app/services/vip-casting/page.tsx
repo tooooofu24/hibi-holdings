@@ -20,6 +20,11 @@ import {
 } from "react-icons/hi2";
 import { PageLayout } from "../../components/PageLayout";
 import { PageHeader } from "../../components/PageHeader";
+import { StructuredData } from "../../components/StructuredData";
+import {
+  vipCastingServiceJsonLd,
+  generateBreadcrumbJsonLd,
+} from "../../../lib/jsonld";
 
 export const metadata: Metadata = {
   title: "VIPキャスティング",
@@ -104,8 +109,16 @@ const faqData = [
 ];
 
 export default function VipCastingPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "ホーム", url: "/" },
+    { name: "事業内容", url: "/services" },
+    { name: "VIPキャスティング", url: "/services/vip-casting" },
+  ]);
+
   return (
     <PageLayout>
+      <StructuredData data={vipCastingServiceJsonLd} />
+      <StructuredData data={breadcrumbs} />
       <VStack gap="24" align="stretch">
         {/* ヒーロー */}
         <Box>

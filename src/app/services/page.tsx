@@ -5,6 +5,15 @@ import { DocumentsCard } from "../components/DocumentsCard";
 import { PageHeader } from "../components/PageHeader";
 import { PageLayout } from "../components/PageLayout";
 import { ServiceSection } from "./components/ServiceSection";
+import { StructuredData } from "../components/StructuredData";
+import {
+  itConsultingServiceJsonLd,
+  dxSupportServiceJsonLd,
+  hrSolutionsServiceJsonLd,
+  customDevelopmentServiceJsonLd,
+  vipCastingServiceJsonLd,
+  generateBreadcrumbJsonLd,
+} from "../../lib/jsonld";
 
 export const metadata: Metadata = {
   title: "事業内容",
@@ -89,8 +98,19 @@ const services: Array<{
 ];
 
 export default function ServicesPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "ホーム", url: "/" },
+    { name: "事業内容", url: "/services" },
+  ]);
+
   return (
     <PageLayout>
+      <StructuredData data={itConsultingServiceJsonLd} />
+      <StructuredData data={dxSupportServiceJsonLd} />
+      <StructuredData data={hrSolutionsServiceJsonLd} />
+      <StructuredData data={customDevelopmentServiceJsonLd} />
+      <StructuredData data={vipCastingServiceJsonLd} />
+      <StructuredData data={breadcrumbs} />
       <VStack gap="24" align="stretch">
         <PageHeader
           title="事業内容"

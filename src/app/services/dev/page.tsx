@@ -20,6 +20,11 @@ import {
 } from "react-icons/hi2";
 import { PageLayout } from "../../components/PageLayout";
 import { PageHeader } from "../../components/PageHeader";
+import { StructuredData } from "../../components/StructuredData";
+import {
+  customDevelopmentServiceJsonLd,
+  generateBreadcrumbJsonLd,
+} from "../../../lib/jsonld";
 
 export const metadata: Metadata = {
   title: "受託開発（システム開発）",
@@ -106,8 +111,16 @@ const faqData = [
 ];
 
 export default function DevPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "ホーム", url: "/" },
+    { name: "事業内容", url: "/services" },
+    { name: "受託開発", url: "/services/dev" },
+  ]);
+
   return (
     <PageLayout>
+      <StructuredData data={customDevelopmentServiceJsonLd} />
+      <StructuredData data={breadcrumbs} />
       <VStack gap="24" align="stretch">
         {/* ヒーロー */}
         <Box>

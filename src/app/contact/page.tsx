@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { PageHeader } from "../components/PageHeader";
 import { PageLayout } from "../components/PageLayout";
 import { ContactForm } from "./components/ContactForm";
+import { StructuredData } from "../components/StructuredData";
+import { generateBreadcrumbJsonLd } from "../../lib/jsonld";
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
@@ -14,8 +16,14 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const breadcrumbs = generateBreadcrumbJsonLd([
+    { name: "ホーム", url: "/" },
+    { name: "お問い合わせ", url: "/contact" },
+  ]);
+
   return (
     <PageLayout>
+      <StructuredData data={breadcrumbs} />
       <VStack gap={{ base: "16", md: "24" }} align="stretch">
         <PageHeader
           title="お問い合わせ"
