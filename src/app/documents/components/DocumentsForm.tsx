@@ -4,17 +4,38 @@ import {
   Button,
   Checkbox,
   CheckboxGroup,
+  createListCollection,
   Field,
   Flex,
   Input,
   Link,
-  NativeSelect,
+  Portal,
+  Select,
   Stack,
   Textarea,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
+
+const budgets = createListCollection({
+  items: [
+    { label: "〜100万円", value: "〜100万円" },
+    { label: "〜300万円", value: "〜300万円" },
+    { label: "〜1000万円", value: "〜1000万円" },
+    { label: "未定", value: "未定" },
+  ],
+});
+
+// 導入希望時期
+const desiredPeriods = createListCollection({
+  items: [
+    { label: "即時", value: "即時" },
+    { label: "3ヶ月以内", value: "3ヶ月以内" },
+    { label: "6ヶ月以内", value: "6ヶ月以内" },
+    { label: "未定", value: "未定" },
+  ],
+});
 
 export function DocumentsForm() {
   const orientation = useBreakpointValue({
@@ -116,20 +137,34 @@ export function DocumentsForm() {
           導入希望時期
           <Field.RequiredIndicator />
         </Field.Label>
-        <NativeSelect.Root
-          variant="plain"
-          flex={flex}
-          borderBottom="1px solid"
-          borderColor="gray.200"
-        >
-          <NativeSelect.Field placeholder="選択してください">
-            <option value="immediate">即時</option>
-            <option value="within-3months">3ヶ月以内</option>
-            <option value="within-6months">6ヶ月以内</option>
-            <option value="undecided">未定</option>
-          </NativeSelect.Field>
-          <NativeSelect.Indicator />
-        </NativeSelect.Root>
+        <Select.Root collection={desiredPeriods} flex={flex}>
+          <Select.HiddenSelect />
+          <Select.Control>
+            <Select.Trigger
+              border="none"
+              borderRadius="none"
+              borderBottom="1px solid"
+              borderColor="gray.200"
+            >
+              <Select.ValueText placeholder="選択してください" />
+            </Select.Trigger>
+            <Select.IndicatorGroup>
+              <Select.Indicator />
+            </Select.IndicatorGroup>
+          </Select.Control>
+          <Portal>
+            <Select.Positioner>
+              <Select.Content>
+                {desiredPeriods.items.map((period) => (
+                  <Select.Item item={period} key={period.value}>
+                    {period.label}
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Positioner>
+          </Portal>
+        </Select.Root>
       </Field.Root>
 
       <Field.Root required orientation={orientation}>
@@ -137,20 +172,34 @@ export function DocumentsForm() {
           想定ご予算
           <Field.RequiredIndicator />
         </Field.Label>
-        <NativeSelect.Root
-          variant="plain"
-          flex={flex}
-          borderBottom="1px solid"
-          borderColor="gray.200"
-        >
-          <NativeSelect.Field placeholder="選択してください">
-            <option value="under-1m">〜100万円</option>
-            <option value="under-3m">〜300万円</option>
-            <option value="under-10m">〜1000万円</option>
-            <option value="undecided">未定</option>
-          </NativeSelect.Field>
-          <NativeSelect.Indicator />
-        </NativeSelect.Root>
+        <Select.Root collection={budgets} flex={flex}>
+          <Select.HiddenSelect />
+          <Select.Control>
+            <Select.Trigger
+              border="none"
+              borderRadius="none"
+              borderBottom="1px solid"
+              borderColor="gray.200"
+            >
+              <Select.ValueText placeholder="選択してください" />
+            </Select.Trigger>
+            <Select.IndicatorGroup>
+              <Select.Indicator />
+            </Select.IndicatorGroup>
+          </Select.Control>
+          <Portal>
+            <Select.Positioner>
+              <Select.Content>
+                {budgets.items.map((budget) => (
+                  <Select.Item item={budget} key={budget.value}>
+                    {budget.label}
+                    <Select.ItemIndicator />
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Positioner>
+          </Portal>
+        </Select.Root>
       </Field.Root>
 
       <Field.Root orientation={orientation}>
