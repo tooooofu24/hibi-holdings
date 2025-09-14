@@ -13,13 +13,13 @@ import {
 import type { Metadata } from "next";
 import NextLink from "next/link";
 import { HiArrowRight } from "react-icons/hi2";
+import { generatePageMetadata } from "../../lib/og-images";
 import { ContactCard } from "../components/ContactCard";
 import { DocumentsCard } from "../components/DocumentsCard";
 import { Footer } from "../components/Footer";
 import { ScrollHeader } from "../components/Header/ScrollHeader";
 import { Hero } from "../components/Hero";
 import { ServiceCard } from "./components/ServiceCard";
-import { generatePageMetadata } from "../../lib/og-images";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "未来を創るデジタルソリューション",
@@ -110,56 +110,46 @@ export default function Home() {
       {/* About Section */}
       <Box py={{ base: "32", md: "52" }} bg="gray.50" id="about">
         <Container maxW="8xl" px={{ base: "4", md: "6" }}>
-          <VStack gap={{ base: "16", md: "24" }} align="stretch">
-            <Grid
-              templateColumns={{ base: "1fr", lg: "1fr 1fr" }}
-              gap={{ base: "12", lg: "16" }}
-              alignItems="start"
+          <Flex
+            flexDirection={{ base: "column", lg: "row" }}
+            gap={{ base: "12", lg: "24" }}
+            justifyContent="space-evenly"
+          >
+            <Heading
+              as="h3"
+              fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
+              color="gray.900"
+              lineHeight="1.2"
             >
-              <Box>
-                <Heading
-                  as="h3"
-                  fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
-                  color="gray.900"
-                  lineHeight="1.2"
-                  mb="8"
-                >
-                  テクノロジーに
-                  <br />
-                  できることを追求する。
-                </Heading>
-              </Box>
+              テクノロジーに
+              <br />
+              できることを追求する。
+            </Heading>
 
-              <VStack
-                align="start"
-                gap="12"
-                position="relative"
-                w="fit-content"
+            <VStack align="start" gap="12" position="relative">
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="fg.muted"
+                lineHeight="1.8"
               >
-                <Text
-                  fontSize={{ base: "md", md: "lg" }}
-                  color="fg.muted"
-                  lineHeight="1.8"
-                >
-                  私たちは、テクノロジーを「できる」に変える実装力で、
-                  <br />
-                  お客様の競争力を磨き続けます。
-                  <br />
-                  短期の成果と長期の基盤づくりを両立させる——
-                  <br />
-                  それが私たちの仕事です。
-                </Text>
+                私たちは、テクノロジーを「できる」に変える実装力で、
+                <br />
+                お客様の競争力を磨き続けます。
+                <br />
+                短期の成果と長期の基盤づくりを両立させる——
+                <br />
+                それが私たちの仕事です。
+              </Text>
 
-                <Flex justifyContent="flex-end" w="full">
-                  <Link asChild textStyle="sm">
-                    <NextLink href="/about">
-                      詳しく見る <HiArrowRight size="16" />
-                    </NextLink>
-                  </Link>
-                </Flex>
-              </VStack>
-            </Grid>
-          </VStack>
+              <Flex justifyContent="flex-end" w="full">
+                <Link asChild textStyle="sm">
+                  <NextLink href="/about">
+                    詳しく見る <HiArrowRight size="16" />
+                  </NextLink>
+                </Link>
+              </Flex>
+            </VStack>
+          </Flex>
         </Container>
       </Box>
 

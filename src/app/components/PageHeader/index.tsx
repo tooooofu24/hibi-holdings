@@ -12,7 +12,7 @@ export function PageHeader({ title, description }: PageHeaderProps) {
         {title}
       </Heading>
       {description && (
-        <Text color="fg.muted" textStyle="lg">
+        <Text color="fg.muted" fontSize={{ base: "md", md: "lg" }}>
           {description}
         </Text>
       )}

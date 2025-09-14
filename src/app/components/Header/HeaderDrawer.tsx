@@ -38,7 +38,11 @@ export function HeaderDrawer({ open, setOpen }: HeaderDrawerProps) {
             backdropFilter="blur(15px)"
           >
             <Box position="fixed" top="0" left="0" w="full">
-              <Container maxW="7xl" py={{ base: "4", md: "6" }}>
+              <Container
+                maxW="7xl"
+                py={{ base: "4", md: "6" }}
+                pr={{ base: "1", md: "2" }}
+              >
                 <Flex justify="end">
                   <Button
                     colorPalette="gray"

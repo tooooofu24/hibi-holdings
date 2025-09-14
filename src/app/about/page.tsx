@@ -62,9 +62,18 @@ export default function AboutPage() {
           <Box>
             <SectionTitle>会社概要</SectionTitle>
             <DataList.Root
-              orientation="horizontal"
-              size="lg"
-              divideY="1px"
+              orientation={{
+                base: undefined,
+                md: "horizontal",
+              }}
+              size={{
+                base: undefined,
+                md: "lg",
+              }}
+              divideY={{
+                base: undefined,
+                md: "1px",
+              }}
               maxW="4xl"
             >
               <DataList.Item pt="4">

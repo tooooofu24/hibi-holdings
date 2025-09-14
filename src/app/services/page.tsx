@@ -1,19 +1,19 @@
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
 import type { Metadata } from "next";
+import {
+  customDevelopmentServiceJsonLd,
+  dxSupportServiceJsonLd,
+  generateBreadcrumbJsonLd,
+  hrSolutionsServiceJsonLd,
+  itConsultingServiceJsonLd,
+  vipCastingServiceJsonLd,
+} from "../../lib/jsonld";
 import { ContactCard } from "../components/ContactCard";
 import { DocumentsCard } from "../components/DocumentsCard";
 import { PageHeader } from "../components/PageHeader";
 import { PageLayout } from "../components/PageLayout";
-import { ServiceSection } from "./components/ServiceSection";
 import { StructuredData } from "../components/StructuredData";
-import {
-  itConsultingServiceJsonLd,
-  dxSupportServiceJsonLd,
-  hrSolutionsServiceJsonLd,
-  customDevelopmentServiceJsonLd,
-  vipCastingServiceJsonLd,
-  generateBreadcrumbJsonLd,
-} from "../../lib/jsonld";
+import { ServiceSection } from "./components/ServiceSection";
 
 import { generatePageMetadata } from "../../lib/og-images";
 
@@ -132,10 +132,15 @@ export default function ServicesPage() {
         <Box pt="16">
           <VStack gap="16" align="stretch" maxW="4xl" mx="auto">
             <Box textAlign="center">
-              <Heading as="h2" textStyle="xl" mb="4">
+              <Heading as="h2" fontSize={{ base: "xl", md: "2xl" }} mb="4">
                 お気軽にご相談ください
               </Heading>
-              <Text textStyle="lg" color="fg.muted" maxW="2xl" mx="auto">
+              <Text
+                fontSize={{ base: "md", md: "lg" }}
+                color="fg.muted"
+                maxW="2xl"
+                mx="auto"
+              >
                 プロジェクトの課題や要件について、まずはお話を聞かせてください。
                 <br />
                 最適なソリューションをご提案いたします。
